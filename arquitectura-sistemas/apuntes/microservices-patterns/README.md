@@ -1,0 +1,20 @@
+# Microservices Patterns: With Examples in Java — Chris Richardson (Manning Publications, 2019)
+
+Libro estructurado como un pattern language (lenguaje de patrones) para la arquitectura de microservicios. Parte del problema del "monolithic hell" y propone descomponer funcionalmente la aplicación en servicios poco acoplados y desplegables de forma independiente, cada uno con su propia base de datos. Recorre la descomposición en servicios, la comunicación entre procesos, la gestión de datos distribuidos (sagas, event sourcing, CQRS), las consultas, las API externas, las pruebas, la preparación para producción, el despliegue y la refactorización de monolitos. Los conceptos se ilustran con el ejemplo recurrente de la aplicación FTGO y con ejemplos en Java.
+
+## Capítulos
+
+- [Capítulo 0 — Prólogo (prefacio)](cap00-preface.md): el autor narra cómo descubrió los microservicios y por qué escribió el libro como un catálogo de patrones.
+- [Capítulo 1 — Escaping monolithic hell (Escapando del infierno monolítico)](cap01-escaping-monolithic-hell.md): el monolito exitoso cae en el "infierno monolítico" y la cura es migrar a una arquitectura de microservicios.
+- [Capítulo 2 — Decomposition strategies (Estrategias de descomposición)](cap02-decomposition-strategies.md): cómo descomponer funcionalmente la aplicación en servicios organizados en torno a conceptos de negocio.
+- [Capítulo 3 — Interprocess communication in a microservice architecture (Comunicación entre procesos en una arquitectura de microservicios)](cap03-interprocess-communication-in-a-microservice-architecture.md): opciones de IPC (síncrona y mensajería asíncrona) y sus compromisos, sin "balas de plata".
+- [Capítulo 4 — Managing transactions with sagas (Gestión de transacciones con sagas)](cap04-managing-transactions-with-sagas.md): las sagas mantienen la consistencia entre servicios mediante transacciones locales y compensaciones.
+- [Capítulo 5 — Designing business logic in a microservice architecture (Diseño de la lógica de negocio en una arquitectura de microservicios)](cap05-designing-business-logic-in-a-microservice-architecture.md): organizar la lógica de un servicio como aggregates DDD que respetan las fronteras transaccionales.
+- [Capítulo 6 — Developing business logic with event sourcing (Desarrollo de la lógica de negocio con event sourcing)](cap06-developing-business-logic-with-event-sourcing.md): persistir cada agregado como una secuencia de eventos de dominio y reconstruir su estado reproduciéndolos.
+- [Capítulo 7 — Implementing queries in a microservice architecture (Implementación de consultas en una arquitectura de microservicios)](cap07-implementing-queries-in-a-microservice-architecture.md): resolver consultas sobre datos repartidos con API composition y CQRS.
+- [Capítulo 8 — External API patterns (Patrones de API externa)](cap08-external-api-patterns.md): diseñar la API externa con un API gateway y Backends for frontends para clientes diversos.
+- [Capítulo 9 — Testing microservices: Part 1 (Pruebas de microservicios: Parte 1)](cap09-testing-microservices-part-1.md): las pruebas automatizadas, la pirámide de pruebas y el consumer-driven contract testing como fundamento de la entrega rápida.
+- [Capítulo 10 — Testing microservices: Part 2 (Probar microservicios: Parte 2)](cap10-testing-microservices-part-2.md): tests de integración, de componente y end-to-end dirigidos por contratos para reducir las pruebas lentas y frágiles.
+- [Capítulo 11 — Developing production-ready services (Desarrollo de servicios listos para producción)](cap11-developing-production-ready-services.md): seguridad, configurabilidad y observabilidad para que un servicio esté listo para producción.
+- [Capítulo 12 — Deploying microservices (Desplegando microservicios)](cap12-deploying-microservices.md): elegir el patrón de despliegue más ligero entre serverless, contenedores, VM y paquetes del lenguaje.
+- [Capítulo 13 — Refactoring to microservices (Refactorización hacia microservicios)](cap13-refactoring-to-microservices.md): migrar incrementalmente un monolito con una strangler application en lugar de reescribirlo desde cero.

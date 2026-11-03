@@ -1,0 +1,80 @@
+# Glosario — Microservices Patterns: With Examples in Java (Chris Richardson)
+
+- **Aggregate**: cúmulo de objetos de dominio DDD con frontera explícita, formado por una entidad raíz y posibles entidades y value objects; solo se actualiza invocando métodos en la raíz, que hace cumplir las invariantes (cap05).
+- **Anti-corruption layer**: capa que usa el integration glue para que el modelo del monolito no contamine el modelo del servicio extraído (cap13).
+- **API composition**: patrón en el que un API composer invoca a los servicios proveedores y combina los resultados; el más simple para consultas y debe usarse siempre que sea posible (cap07).
+- **API gateway**: punto de entrada único por el que los clientes externos acceden a los servicios; se encarga de enrutamiento, composición de API, traducción de protocolos y funciones de borde como la autenticación (cap08).
+- **Apply (método)**: parte del método de un agregado en event sourcing que actualiza el estado y no puede fallar (cap06).
+- **Audit logging**: patrón de observabilidad que registra la actividad para auditoría (cap11).
+- **Backends for frontends**: patrón que define una gateway por tipo de cliente y da autonomía a los equipos para desarrollar, desplegar y operar la suya (cap08).
+- **Big bang rewrite**: reescritura total que se debe evitar al migrar un monolito; se prefiere la migración incremental (cap13).
+- **Business capability**: concepto de negocio en torno al cual se organizan los servicios en la descomposición (cap02).
+- **Circuit breaker**: patrón que evita cascadas de fallos en clientes síncronos y se aplica en el API gateway ante servicios lentos o caídos (cap03, cap08).
+- **Client-side discovery**: mecanismo de service discovery a nivel de aplicación, combinado con Self registration (cap03).
+- **Coreografía**: estilo de saga sin coordinador en el que los participantes intercambian eventos; simple y poco acoplada, buena para sagas simples (cap04).
+- **Consumer contract test**: prueba que verifica la forma de la API del proveedor; no prueba su lógica de negocio (cap09).
+- **Consumer-driven contract testing**: técnica (Spring Cloud Contract, Pact) que verifica interacciones y sustituye costosos tests end-to-end (cap09).
+- **Contramedidas**: técnicas (semantic lock, commutative updates, pessimistic view, reread value, version file, by value) que previenen o reducen el impacto de la falta de aislamiento en sagas (cap04).
+- **CQRS**: patrón que separa el lado de comando (CUD, publica eventos) del lado de consulta (vistas de solo lectura mantenidas suscribiéndose a esos eventos) (cap07).
+- **Cucumber**: herramienta que ejecuta escenarios escritos en Gherkin como especificaciones ejecutables (cap10).
+- **DDD (Domain-Driven Design)**: enfoque que da a cada servicio su propio modelo de dominio y elimina god classes como la `Order` de FTGO (cap02).
+- **Deployment pipeline**: cadena que ejecuta suites cada vez más exhaustivas (pre-commit, commit, integration, component, deploy) para dar feedback cuanto antes (cap09).
+- **Distributed monolith**: resultado no deseado de una mala descomposición que SRP y CCP ayudan a evitar (cap02).
+- **Distributed tracing**: patrón de observabilidad que sigue una petición a través de los servicios mediante traces y spans (cap11).
+- **Domain event**: evento que un agregado publica al crearse o actualizarse; sirve para sagas por coreografía, CQRS, webhooks, notificaciones y mensajes WebSocket (cap05).
+- **Domain model**: patrón orientado a objetos adecuado para lógica de negocio compleja (cap05).
+- **Event sourcing**: patrón que persiste cada agregado como una secuencia de eventos de dominio; el estado actual se reconstruye reproduciéndolos (fold/replay) (cap06).
+- **Event storming**: técnica de taller para descubrir rápidamente eventos, comandos y aggregates de un dominio complejo (cap05).
+- **Event store**: híbrido de base de datos y message broker donde se guardan los eventos; Eventuate Local combina MySQL y Apache Kafka (cap06).
+- **Eventuate Tram**: framework de mensajería transaccional con tabla OUTBOX usado para publicar eventos y para sagas (cap04, cap05).
+- **Exception tracking**: patrón de observabilidad que agrupa y notifica las excepciones (cap11).
+- **FTGO**: aplicación de ejemplo que recorre el libro para ilustrar los patrones (cap02, cap04).
+- **Gherkin**: lenguaje con estructura given-when-then para escribir escenarios de prueba (cap10).
+- **God class**: clase enorme y poco cohesiva (como la `Order` de FTGO) que DDD elimina al dar a cada servicio su modelo (cap02).
+- **GraphQL**: esquema basado en grafo con resolvers y consultas flexibles; alternativa a una gateway REST para clientes diversos (cap08).
+- **gRPC**: mecanismo de IPC binario y eficiente, con muchas operaciones de actualización (cap03).
+- **Health check API**: patrón de observabilidad que expone el estado de salud de un servicio (cap11).
+- **Integration glue**: código que conecta servicio y monolito mediante adaptadores e IPC durante la migración (cap13).
+- **IPC (Interprocess communication)**: comunicación entre procesos, central en microservicios porque los servicios son procesos separados que colaboran (cap03).
+- **Istio**: service mesh que separa despliegue de release enrutando tráfico por reglas (por versión, cabecera o peso) (cap12).
+- **JWT (JSON Web Token)**: token transparente y autocontenido que el gateway pasa a los servicios; irrevocable, se mitiga con expiraciones cortas y refresh tokens (cap11).
+- **Kubernetes**: orquestador que mantiene el número deseado de instancias sanas y permite rolling upgrades y rollbacks sin downtime con readinessProbe y livenessProbe (cap12).
+- **Lead time**: tiempo de entrega que las pruebas automatizadas acortan (cap09).
+- **Log aggregation**: patrón de observabilidad que centraliza los logs de los servicios (cap11).
+- **Loose coupling**: acoplamiento débil que exige comunicación solo vía API y prohíbe compartir base de datos entre servicios (cap02).
+- **Microservice architecture**: patrón que descompone la aplicación en servicios desplegables de forma independiente, cada uno con su propia base de datos (cap01).
+- **Microservice chassis**: framework que evita reimplementar concerns transversales en cada servicio, pero exige uno por lenguaje/plataforma (cap11).
+- **Mock**: doble de prueba que verifica que el SUT invoca correctamente una dependencia (cap09).
+- **Monolithic architecture**: patrón que estructura la aplicación como una única unidad desplegable (cap01).
+- **Monolithic hell**: estado en el que un monolito exitoso vuelve el desarrollo lento, penoso y poco fiable (cap01).
+- **OAuth 2.0**: base recomendada para la autenticación centralizada en el API gateway (cap11).
+- **Orquestación**: estilo de saga con un orquestador central (modelado como máquina de estados) que envía comandos; evita ciclos y mejora la separación de responsabilidades (cap04).
+- **Pattern language**: conjunto de patrones que ayuda a decidir si usar microservicios y a aplicarlos eficazmente por área de problema (cap01).
+- **Polling publisher**: forma de leer la Transactional outbox mediante sondeo para publicar mensajes (cap03).
+- **Process (método)**: parte del método de un agregado en event sourcing que valida y devuelve eventos (cap06).
+- **Pirámide de pruebas**: guía que recomienda muchas pruebas unitarias (rápidas, fiables) y muy pocas end-to-end (lentas, frágiles, costosas) (cap09).
+- **REST**: mecanismo de IPC simple y estándar de facto, pero síncrono y con problemas al obtener varios recursos y mapear verbos (cap03).
+- **RPI (remote procedure invocation)**: invocación remota síncrona, una de las opciones de IPC (cap03).
+- **Saga**: secuencia de transacciones locales coordinadas por mensajería; cada una actualiza un solo servicio y confirma sus cambios (cap04).
+- **Scale cube**: modelo de *The Art of Scalability* cuyo eje Y (descomposición funcional en servicios) define a los microservicios (cap00, cap01).
+- **Self registration**: mecanismo de service discovery a nivel de aplicación combinado con Client-side discovery (cap03).
+- **Semantic Versioning**: esquema de versionado usado para gestionar la evolución de la API (cap03).
+- **Serverless**: patrón de despliegue (p. ej. AWS Lambda) que elimina la administración del sistema y ofrece elasticidad y precio por uso, pero sufre latencia de cola larga (cap12).
+- **Server-side discovery**: mecanismo de service discovery provisto por la plataforma, combinado con 3rd party registration y preferido (cap03).
+- **Service mesh**: infraestructura que mueve las funciones de red fuera del servicio y permite separar deployment de release (cap11, cap12).
+- **Snapshot**: captura de estado usada para no recargar todos los eventos de agregados longevos en event sourcing (cap06).
+- **Span**: unidad que compone un trace en el distributed tracing (cap11).
+- **Spring Cloud Contract**: herramienta que genera tests del lado proveedor y configura stubs en el consumidor a partir de los contratos (cap10).
+- **Spring Cloud Gateway**: gateway reactiva basada en Spring 5 y Project Reactor que enruta por cualquier atributo de la petición (cap08).
+- **Strangler application**: nueva aplicación de microservicios que crece alrededor del monolito hasta que este se reduce y desaparece (cap13).
+- **Stub**: doble de prueba que devuelve valores al SUT (cap09).
+- **Subdomain**: concepto de negocio en torno al cual se organizan los servicios en la descomposición (cap02).
+- **SUT (System Under Test)**: sistema bajo prueba cuyo comportamiento verifica una prueba (cap09).
+- **Transaction log tailing**: técnica para leer la outbox o el event store siguiendo el log de transacciones (cap03, cap06).
+- **Transaction script**: patrón procedural adecuado para lógica de negocio simple (cap05).
+- **Transactional outbox**: patrón que publica mensajes de forma atómica escribiéndolos en una tabla dentro de la transacción de negocio (cap03).
+- **Upcasting**: técnica para gestionar la evolución del esquema de eventos en event sourcing (cap06).
+- **User journey test**: test end-to-end que recorre un viaje completo del usuario para reducir número de tests y sobrecarga por test (cap10).
+- **Vault**: almacén donde se guardan los secretos de configuración (cap11).
+- **Value object**: objeto de dominio sin identidad que puede formar parte de un aggregate (cap05).
+- **XA/2PC**: transacciones distribuidas que no encajan en microservicios porque reducen la disponibilidad y chocan con el teorema CAP (cap04).
