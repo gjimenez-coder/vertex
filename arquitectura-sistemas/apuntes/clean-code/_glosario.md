@@ -1,0 +1,67 @@
+# Glosario — Clean Code
+
+- **ABSTRACT FACTORY**: patrón usado cuando la aplicación debe controlar cuándo se crean los objetos, y para resolver la creación de instancias sin que una clase base conozca a sus derivadas (cap11, cap16).
+- **Acoplamiento temporal**: dependencia oculta entre pasos que deben ejecutarse en cierto orden; debe hacerse visible estructuralmente (una función llama a la otra) y no esconderse (cap03, cap15).
+- **ADAPTER (patrón)**: puente entre tu interfaz ideal y la API real de un tercero; concentra en un solo sitio los cambios cuando esa API evoluciona y crea *seams* para pruebas (cap08).
+- **Active Record**: estructura de datos (como DTO y beans) sobre la que las reglas de negocio deben ir en objetos aparte que ocultan sus datos (cap06).
+- **AOP (Aspect-Oriented Programming)**: mecanismo para tratar los cross-cutting concerns (persistencia, seguridad, transacciones) de forma no invasiva (cap11).
+- **ArgumentMarshaler**: concepto con polimorfismo que permite eliminar el type-case (`instanceof`) y unificar el set en `m.set(currentArgument)` durante la refactorización de `Args` (cap14).
+- **Args**: parser de argumentos de línea de comandos que empezó bien pero no escaló, usado como caso de estudio de refinamiento sucesivo (cap14).
+- **Artesanía (craftsmanship)**: respuesta del autor a cómo quedar del lado correcto cuando el software se complica; combina conocimiento y trabajo (práctica) de forma inseparable (cap00).
+- **BDUF (Big Design Up Front)**: diseño completo por adelantado; es dañino porque inhibe la adaptación al cambio (cap11).
+- **BUILD-OPERATE-CHECK**: patrón que hace evidente la legibilidad de una prueba al separar construcción, operación y verificación (cap09).
+- **CAS (Compare-And-Swap)**: base de soluciones no bloqueantes (`AtomicInteger`, etc.) que suelen superar al `synchronized`, el cual siempre adquiere un lock aunque no haya contención (cap18).
+- **Checked exceptions**: excepciones que conviene evitar porque violan el Open/Closed Principle y rompen la encapsulación con cascadas de cambios (cap07).
+- **Client-based locking**: estrategia de bloqueo en el cliente; se prefiere server-based locking frente a ella al combinar varios métodos thread-safe (cap13, cap18).
+- **Code smell (olor del código)**: señal que delata código problemático, recopilada por el autor al refactorizar y agrupada por categorías (cap17).
+- **Cohesión**: propiedad por la que métodos y variables se sostienen como un todo lógico; cuando se pierde, hay que dividir la clase (cap10).
+- **Comando/consulta (separación)**: principio de separar las funciones que hacen algo (comando) de las que responden algo (consulta) (cap03).
+- **Comentario**: un mal necesario cuyo uso compensa el fracaso de expresarse en el código; a menudo miente porque no se mantiene al ritmo del código (cap04).
+- **Concurrencia**: estrategia de desacoplamiento entre el *qué* y el *cuándo*; escribir código concurrente limpio es muy difícil (cap13).
+- **ConTest**: herramienta de instrumentación usada para exponer fallos al probar código concurrente (cap18).
+- **Cross-cutting concerns**: preocupaciones transversales como persistencia, seguridad y transacciones, que se tratan con AOP o mecanismos tipo aspecto (cap11).
+- **DayDate**: nombre propuesto para `SerialDate` porque los nombres deben estar en el nivel de abstracción correcto y no implicar la implementación (cap16).
+- **Deadlock**: bloqueo que requiere cuatro condiciones (exclusión mutua, lock & wait, no preemption, circular wait); romper cualquiera lo evita (cap18).
+- **Dependency Injection (DI)**: aplicación de IoC a las dependencias que deja a la clase pasiva mientras el contenedor instancia y cablea; Spring es el contenedor DI más conocido en Java (cap11).
+- **Diseño emergente**: idea de que seguir unas reglas simples mientras programas hace que surja un buen diseño por sí solo (cap12).
+- **Diseño Simple (cuatro reglas de Kent Beck)**: en orden de importancia, ejecutar todas las pruebas, eliminar duplicación, ser expresivo y minimizar clases y métodos (cap12).
+- **DIP (Dependency Inversion Principle)**: principio que aísla del cambio haciendo que las clases dependan de abstracciones (interfaces) y no de detalles concretos, lo que facilita el testeo (cap10).
+- **DRY (Don't Repeat Yourself)**: regla ligada a G5; cada duplicación es una abstracción perdida y es de las más importantes del libro (cap17).
+- **DSL (Domain-Specific Language)**: lenguaje específico de dominio que ayuda a cerrar la brecha entre el dominio y el código (cap11).
+- **DTO (Data Transfer Object)**: estructura de datos; las reglas de negocio van en objetos aparte que ocultan sus datos (cap06).
+- **EJB (EJB2/EJB3)**: tecnología Java; EJB2 era invasivo y acoplado, mientras que EJB3 y Spring corrigen ese problema tratando los concerns de forma no invasiva (cap11).
+- **Estructura de datos**: constructo que expone sus datos y no tiene comportamiento significativo; opuesto complementario del objeto (cap06).
+- **Excepción**: mecanismo preferido frente a flags o códigos de retorno que define un ámbito tipo transacción y deja al llamador más limpio (cap07).
+- **F.I.R.S.T.**: conjunto de propiedades que deben cumplir las pruebas unitarias limpias (cap09).
+- **FEATURE ENVY**: smell que se corrige moviendo cada responsabilidad a donde pertenece, subiendo o bajando métodos según sus dependencias (cap16).
+- **FitNesse**: herramienta de pruebas de aceptación usada para mantener el sistema funcionando durante el refinamiento sucesivo (cap14).
+- **Getters y setters**: métodos que muchos programadores añaden automáticamente y que exponen las variables como si fueran públicas, rompiendo la abstracción (cap06).
+- **Híbrido**: constructo mitad objeto mitad estructura de datos; es lo peor de ambos mundos y hay que evitarlo (cap06).
+- **Hungarian Notation**: codificación de nombres que se debe evitar, junto con prefijos como `m_` o la `I` de interfaz (cap02).
+- **Learning test**: prueba que explora una API externa con experimentos controlados, sin mezclar aprendizaje e integración en el código de producción; detecta cambios incompatibles en nuevas versiones (cap08).
+- **Ley de Demeter**: habla con amigos, no con extraños; un módulo no debe conocer las entrañas de los objetos que manipula (cap06).
+- **Límites (boundaries)**: puntos de contacto con software que no controlamos (terceros, open source, subsistemas de otros equipos) donde aparecen tensiones y riesgos a gestionar deliberadamente (cap08).
+- **Modelo de memoria**: conocimiento necesario para saber qué operaciones son seguras en concurrencia; `++` no es atómico y la asignación de 64 bits requiere dos pasos (cap18).
+- **Monte Carlo testing**: técnica recomendada, junto con múltiples plataformas y cargas, para probar código concurrente (cap18).
+- **Nivel de abstracción**: una función debe hacer solo los pasos un nivel por debajo de su nombre, y separar niveles es de lo más difícil y valioso al refactorizar (cap03, cap17).
+- **Noise words**: palabras de relleno (`Info`, `Data`, `variable`) que no aportan una distinción con significado y hay que evitar (cap02).
+- **Null**: valor que no se debe devolver ni pasar; se sustituye por excepciones, objetos special case o colecciones vacías (cap07).
+- **Objeto**: constructo que oculta sus datos tras abstracciones y expone funciones que operan sobre ellos; opuesto complementario de la estructura de datos (cap06).
+- **OCP (Open/Closed Principle)**: principio que busca sistemas que se amplían por extensión (subclases) sin modificar código existente (cap10).
+- **POJO (Plain Old Java Object)**: objeto simple y testeable en el que se escribe la lógica de dominio, separado del código consciente de hilos y de la infraestructura (cap11, cap13).
+- **Principio de mínima sorpresa**: idea que recorre varias heurísticas (G2, G11, G17): el código va donde el lector lo espera (cap17).
+- **Producer-Consumer**: uno de los algoritmos fundamentales de concurrencia que conviene conocer, junto con Readers-Writers y Dining Philosophers (cap13).
+- **Refactoring**: proceso iterativo de ensayo y error, con pasos diminutos y pruebas verdes entre cada uno, que no es reescribir sino mejorar con el comportamiento fijado por pruebas (cap10, cap14, cap15).
+- **Refinamiento sucesivo**: proceso de escribir primero código sucio y luego limpiarlo mediante sucesivas revisiones, no en una sola pasada (cap14).
+- **Regla del Boy Scout**: deja el código un poco más limpio de como lo encontraste; expresa la mejora continua como profesionalismo (cap01, cap15, cap16).
+- **Revisión de código**: acto profesional —no de malicia— que hay que saber dar y recibir, como hacen médicos, pilotos y abogados (cap16).
+- **SerialDate**: clase real de la librería JCommon (paquete `org.jfree.date`, de David Gilbert) refactorizada públicamente como estudio de caso (cap16).
+- **Server-based locking**: estrategia de bloqueo preferible al client-based locking cuando se combinan varios métodos thread-safe (cap13, cap18).
+- **Special Case Pattern**: patrón que evita tratar los casos excepcionales en el cliente (cap07).
+- **Spring**: contenedor de inyección de dependencias (DI) más conocido en Java, que trata los concerns de forma no invasiva (cap11).
+- **SRP (Single Responsibility Principle)**: principio que exige una única razón para cambiar; nombres comodín (`Manager`, `Processor`, `Super`) delatan su violación (cap10, cap13, cap18).
+- **Stepdown Rule**: regla de leer el código de arriba abajo, con funciones públicas seguidas de sus utilidades privadas y cada nivel un escalón por debajo (cap03, cap10).
+- **TDD (Test-Driven Development)**: disciplina cuyas Tres Leyes encierran prueba y producción en un ciclo de ~30 segundos escribiéndolas juntas (cap09, cap14).
+- **TEMPLATE METHOD**: patrón que elimina duplicación de alto nivel dejando que las subclases rellenen solo lo que varía (cap12).
+- **Train wreck**: encadenamiento de llamadas sobre valores devueltos cuya licitud depende de si se trata de objetos o de estructuras de datos (cap06).
+- **Tres Leyes de TDD**: reglas que obligan a escribir la prueba antes que el código de producción dentro de un ciclo corto (cap09).
