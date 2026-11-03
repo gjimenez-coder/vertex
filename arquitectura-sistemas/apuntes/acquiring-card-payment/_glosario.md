@@ -1,0 +1,85 @@
+# Glosario — Acquiring Card Payments
+
+- **3-DES**: cifrado simétrico que encadena tres claves en modo E-D-E, con tamaños efectivos de 56, 112 o 168 bits (cap12).
+- **3D Secure**: mecanismo de autenticación CNP con el modelo de tres dominios (adquirente, emisor, interoperabilidad), que usa MPI, Directory Server y ACS y genera evidencia UCAF/CAVV y un indicador ECI (cap04).
+- **ACH**: transferencia bancaria entre cuentas, uno de los métodos que dominan en mercados maduros (cap09).
+- **ACS**: Access Control Server, componente del dominio emisor en 3D Secure (cap04).
+- **AES (Rijndael)**: cifrado por bloques de 128 bits con claves de 128/192/256 bits y 10/12/14 rondas, adoptado por EMV y PTS 3.0 (cap12).
+- **AID**: identificador de aplicación de la tarjeta; el Entry Point contactless elige una combinación de AID más Kernel (cap05, cap06).
+- **APDU**: unidad de comunicación con el ICC formada por CLA, INS, P1, P2 y SW1/SW2 (cap05).
+- **ARQC**: criptograma de solicitud de autorización generado por la tarjeta en una transacción EMV online (cap02, cap05).
+- **ARPC**: criptograma de respuesta del emisor que permite la autenticación mutua tarjeta-emisor (cap05).
+- **ASCII**: codificación de caracteres de 7 bits (1963); dígitos en 0x30–0x39 y espacio en 0x20 (cap11).
+- **AVS**: Address Verification Service, compara nombre y dirección en formato condensado para verificar datos en CNP (cap04).
+- **Acquirer**: entidad que gestiona al comercio: procesa, presenta las transacciones al issuer y remite los fondos (cap01).
+- **Allocation**: proceso de disputa en el que el scheme decide la responsabilidad, frente a collaboration (cap07).
+- **Base64**: codificación que agrupa en palabras de 6 bits tras rellenar a múltiplo de 3 octetos, con `=` como relleno final (cap11).
+- **BCD**: codificación de 5 bits usada en las pistas magnéticas Track 2 y Track 3, con paridad en el bit menos significativo (cap11).
+- **BER-TLV**: codificación que representa cada elemento como tag, longitud y valor, usada en EMV chip/contactless (cap05, cap11).
+- **Bitmap**: estructura (primario obligatorio de 8 bytes) que indica qué data elements están presentes en un mensaje ISO 8583 (cap03).
+- **CAVV**: evidencia de autenticación generada por 3D Secure (cap04).
+- **CBC-MAC**: cálculo de MAC usado en pagos, con IV de ceros, del que se envía solo la última salida (cap12).
+- **CDA**: autenticación offline combinada con el criptograma, la más segura de los tres niveles EMV (cap05).
+- **Chargeback**: paso del flujo de disputa iniciado por el issuer; no responderlo equivale a aceptarlo (cap07).
+- **CHD**: Cardholder Data (PAN y, junto a él, nombre, service code y expiración); puede almacenarse con el PAN ilegible (cap08).
+- **Clearing**: fase del procesamiento de pago que intercambia los datos de la transacción; en DMS va aparte, a menudo en ficheros batch (cap03).
+- **CNP**: entorno card-not-present, donde ni la tarjeta ni el dispositivo están físicamente en el punto de venta (cap04).
+- **Contactless Magstripe**: modo que empaqueta el resultado contactless en banda magnética con un CVC/dCVV dinámico para infraestructuras antiguas (cap06).
+- **CVM List**: lista que decide el método de verificación del titular según importes y condiciones (cap05).
+- **CVV**: valor criptográfico de verificación de tarjeta; existen CVV1, CVV2, iCVV y dCVV, calculados con CVK en HSM mediante 3-DES (cap02).
+- **DDA**: autenticación offline dinámica, nivel intermedio de seguridad en EMV (cap05).
+- **DES**: cifrado simétrico de 64 bits y 16 rondas (cap12).
+- **DMS**: Dual Message Service, procesa autorización y clearing con dos mensajes (cap03).
+- **EBCDIC**: codificación propietaria de 8 bits de IBM con páginas de código incompatibles; perdura en pagos por los mainframes (cap11).
+- **ECB**: modo de bloque que cifra cada bloque de forma independiente, considerado riesgoso (cap12).
+- **ECI**: indicador que acompaña a la evidencia de 3D Secure, con valores 05/06/07 (cap04).
+- **EMV 3DS 2.0**: versión JSON/JWE y royalty-free de 3D Secure, con flujos frictionless, challenge, decoupled/out-of-band y 3RI y SDK móvil (cap04).
+- **EMV Tokenization**: tokenización de red que usa tokens con formato PAN (IIN "2") que la red traduce, habilitando pagos móviles (cap04).
+- **Entry Point**: componente contactless que elige una combinación de AID más Kernel y ejecuta hasta cinco pasos con Starts A–D (cap06).
+- **EPB**: Encrypted PIN Block; el online PIN viaja como EPB con PIN translations a lo largo de la cadena (cap02, cap13).
+- **GENERATE AC**: comando EMV que produce el criptograma de la transacción (TC/ARQC/AAC) (cap05).
+- **GPO**: comando Get Processing Options que devuelve AIP y AFL en el flujo EMV (cap05).
+- **HSM**: módulo de seguridad hardware que protege todas las claves bajo la LMK y separa KEK de data keys (cap02, cap08).
+- **ICC**: circuito integrado (ISO/IEC 7816) de la tarjeta con chip; todo EMV card es un ICC pero no al revés (cap05).
+- **IIN/BIN**: parte inicial del PAN usada para enrutar y aplicar reglas por marca y producto mediante BIN tables (cap02).
+- **Interchange fee**: liquidación entre acquiring e issuing, presente en el modelo four-party y ausente en el three-party (cap01).
+- **ISO 8583**: estándar de mensajería de pago del que la mayoría de esquemas usan dialectos (cap03).
+- **ISO 9564**: estándar que define los formatos de EPB (bloque de PIN) (cap13).
+- **Issuer**: entidad que gestiona al titular: crédito, fraude, facturación y disputas (cap01).
+- **KCV**: Key Check Value, confirma la validez de una clave cifrando un bloque de ceros y conservando los primeros bytes (cap10).
+- **Kernel**: implementación de cada esquema en contactless; los Kernels difieren en modos, comandos y método de autenticación offline (cap06).
+- **Liability shift**: traslado de responsabilidad (3D Secure, EMV) que niega derechos de disputa a quien no adopta la tecnología (cap07).
+- **LMK**: Local Master Key bajo la que el HSM protege todas las claves (cap08).
+- **LRC**: Longitudinal Redundancy Check, cierra los datos de la banda magnética como complemento a dos de 8 bits (cap10).
+- **Luhn**: algoritmo (ISO/IEC 7812-1) que valida el PAN duplicando dígitos y verificando divisibilidad por 10 (cap02, cap10).
+- **MAC**: código de autenticación de mensaje calculado con clave secreta (cap12).
+- **MTID**: identificador de mensaje de cuatro dígitos que codifica versión, clase, función y origen en ISO 8583 (cap03).
+- **PAN**: Primary Account Number de 13 a 19 dígitos, estructurado en IIN/BIN, IAN y check digit (cap02).
+- **Pass-through wallet**: monedero que traduce cada operación a una transacción con una tarjeta subyacente, como Apple Pay (cap09).
+- **PCI DSS**: estándar de seguridad de datos con seis principios y doce requisitos, mantenido por el PCI SSC (cap08).
+- **PCI SSC**: PCI Security Standards Council, fundado en 2006 por Amex, Discover, JCB, MasterCard y Visa (cap08).
+- **PIN block formato 0**: formato EPB que requiere PIN y PAN y combina dos vectores mediante XOR antes de cifrar (cap13).
+- **PIN block formato 4**: formato EPB de 128 bits bajo AES que reemplaza a los formatos 0 y 3 y combina los vectores con doble cifrado AES en CBC (cap13).
+- **POS entry mode**: modo de entrada determinado por las capacidades del terminal y de la tarjeta y las condiciones transitorias (cap02).
+- **PPSE**: Proximity Payment System Environment (`2PAY.SYS.DDF01`), usado por el Entry Point para seleccionar la combinación (cap06).
+- **Processing code**: data element DE 3 de ISO 8583 (cap03).
+- **PVV**: Pin Verification Value usado para validar el PIN mediante PVK (cap02).
+- **QSA**: auditoría que certifica el cumplimiento de PCI DSS y produce un ROC (cap08).
+- **Reason code**: código que identifica el motivo de una disputa; se redujeron de decenas a unos pocos (cap07).
+- **Representment**: respuesta del acquirer a un chargeback; puede ser parcial o total (cap07).
+- **SAD**: Sensitive Authentication Data (track completo, CVV2, PIN, PIN block) que nunca puede almacenarse (cap08).
+- **SAQ**: cuestionario de autoevaluación que certifica PCI DSS y produce un AOC (cap08).
+- **SCA**: Strong Customer Authentication de la UE (desde 2019), exige dos factores dinámicamente enlazados (cap02).
+- **SDA**: autenticación offline estática, vulnerable a replay, el nivel más básico en EMV (cap05).
+- **Service code**: código de tres dígitos de la banda que define interchange, modo de autorización y servicios (cap02).
+- **Settlement**: fase obligatoria del procesamiento de pago en la que se liquidan los fondos (cap03).
+- **SMS**: Single Message Service, procesa autorización y clearing con un único mensaje, atómico y típico en ATM (cap03).
+- **Staged wallet**: monedero que se recarga por etapas y luego se gasta, preocupa a los schemes por la pérdida de trazabilidad (cap09).
+- **STAN**: System Trace Audit Number, data element DE 11 de ISO 8583 (cap03).
+- **STIP**: Stand-In Processing, servicio añadido por los esquemas (cap03).
+- **Three-party (modelo cerrado)**: modelo en el que el scheme hace todo, con máximo control pero expansión difícil (Amex, Diners, Discover) (cap01).
+- **Four-party (modelo abierto)**: modelo que delega issuing/acquiring y crece más rápido (Visa, MasterCard, UnionPay) (cap01).
+- **Tokenización**: sustitución del PAN por un token; la de procesador cifra el vector con un DEK protegido por la LMK en un HSM (cap04).
+- **Track 1 / Track 2**: pistas de la banda magnética: Track 1 alfanumérica (79) y Track 2 numérica (40) (cap02).
+- **TVR / TSI**: Terminal Verification Results y Transaction Status Information, que acumulan los resultados de la transacción EMV (cap05).
+- **ZMK**: Zone Master Key compartida por una zona de confianza para intercambiar worker keys (ZPK/AWK) entre HSM (cap08).
