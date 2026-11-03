@@ -1,0 +1,85 @@
+# Glosario — Dive Into Design Patterns
+
+- **Abstracción**: pilar de la POO que consiste en modelar un objeto real limitado a un contexto específico, copiando solo los atributos y comportamientos relevantes (cap02).
+- **Abstract Factory**: patrón creacional que produce familias de objetos relacionados sin especificar sus clases concretas (cap15).
+- **Abstracción (Bridge)**: en Bridge, la jerarquía de control de alto nivel que delega el trabajo real en un objeto de implementación (cap20).
+- **Acoplamiento**: grado de dependencia entre clases; las relaciones entre objetos forman una escala creciente de dependencia a herencia (cap03).
+- **Adapter**: patrón estructural que permite la colaboración entre objetos con interfaces incompatibles mediante un objeto traductor intermedio (cap19).
+- **Agregación**: asociación "todo a parte" donde el componente existe de forma independiente y puede pertenecer a varios contenedores (cap03).
+- **Asociación**: relación que añade a la dependencia un vínculo permanente, de modo que el objeto siempre tiene acceso al otro (cap03).
+- **Builder**: patrón creacional que construye objetos complejos paso a paso y produce distintas representaciones con el mismo código de construcción (cap16).
+- **Campo**: junto con los métodos, uno de los miembros de una clase; sus valores constituyen el estado del objeto (cap01).
+- **Chain of Responsibility (CoR)**: patrón de comportamiento que pasa una solicitud por una cadena de manejadores, cada uno decidiendo si la procesa y si la reenvía (cap26).
+- **Clase**: "plano" a partir del cual se construyen los objetos en la POO (cap01).
+- **Clase adaptadora**: variante de Adapter basada en herencia múltiple, posible en lenguajes como C++ (cap19).
+- **Cliente**: código que usa los patrones; por ejemplo, compone la cadena en CoR o elige la estrategia en Strategy (cap26).
+- **Clonación**: proceso de copiar un objeto delegado al propio objeto mediante una interfaz común con un método `clonar` (cap17).
+- **Comando**: objeto que encapsula una solicitud con una interfaz de ejecución común, desacoplando emisor y receptor (cap27).
+- **Command**: patrón de comportamiento que convierte una solicitud en un objeto independiente que contiene toda su información (cap27).
+- **Composición**: agregación donde el contenedor gestiona el ciclo de vida del componente, que no existe sin él; expresa la relación "tiene un/a" (cap03).
+- **Composite**: patrón estructural que permite componer objetos en estructuras de árbol y tratarlas como objetos individuales (cap21).
+- **Constructor telescópico**: constructor con muchos parámetros que Builder evita sacando el código de construcción a objetos independientes (cap16).
+- **Contexto (State)**: objeto que guarda una referencia a un objeto de estado y le delega el trabajo relacionado con el estado (cap32).
+- **Contexto (Strategy)**: clase que mantiene una referencia a una estrategia y le delega el trabajo a través de una interfaz común (cap33).
+- **Cuidadora**: en Memento, actor que gestiona el historial de mementos y los ve solo mediante una interfaz limitada de metadatos (cap30).
+- **Decorator**: patrón estructural que añade funcionalidades a un objeto colocándolo dentro de wrappers que comparten su interfaz (cap22).
+- **Dependencia**: la relación más débil entre clases; surge al usar clases concretas y se debilita al depender de interfaces o clases abstractas (cap03).
+- **Directora**: clase opcional de Builder que encapsula y reutiliza el orden de construcción, ocultando los detalles al cliente (cap16).
+- **Double Dispatch**: técnica de Visitor por la que el objeto que "acepta" elige el método visitante adecuado porque conoce su propia clase (cap35).
+- **Encapsulación**: pilar de la POO que oculta estado y comportamiento internos, exponiendo solo una interfaz limitada (cap02).
+- **Estado**: valores de los campos de un objeto en un momento dado (cap01).
+- **Estado extrínseco**: en Flyweight, información contextual única de cada objeto que se mueve fuera del flyweight y se pasa por parámetros (cap24).
+- **Estado intrínseco**: en Flyweight, información constante e inmutable que se repite entre muchos objetos y vive dentro del flyweight (cap24).
+- **Estrategia**: en Strategy, interfaz común que expone un único método para disparar el algoritmo encapsulado (cap33).
+- **Extensibilidad**: capacidad de ampliar un diseño con facilidad; junto con la reutilización, uno de los ejes del buen diseño (cap05).
+- **Fábrica abstracta**: interfaz que agrupa los métodos de creación de una familia de productos (cap15).
+- **Fábrica concreta**: implementación por variante que produce solo productos compatibles entre sí (cap15).
+- **Fábrica flyweight**: objeto que reutiliza flyweights existentes buscándolos por su estado intrínseco antes de crear uno nuevo (cap24).
+- **Facade**: patrón estructural que proporciona una interfaz simplificada a un subsistema complejo sin añadir funcionalidad nueva (cap23).
+- **Factory Method**: patrón creacional que proporciona una interfaz para crear objetos en una superclase, permitiendo a las subclases alterar el tipo de producto (cap14).
+- **Flyweight**: patrón estructural que permite mantener más objetos en la RAM compartiendo las partes comunes del estado entre varios objetos (cap24).
+- **Framework**: nivel más alto de reutilización; aplica el principio de Hollywood y te enganchas a él mediante subclases (cap05).
+- **GoF (Gang of Four)**: libro de 1995 que llevó los patrones a la programación con un catálogo de 23 patrones (cap04).
+- **Herencia**: pilar de la POO que crea clases sobre otras existentes para reutilizar código; expresa la relación "is a" (cap02).
+- **Idiom**: patrón de nivel más bajo, específico de un solo lenguaje de programación (cap04).
+- **Implementación (Bridge)**: en Bridge, la jerarquía de bajo nivel que hace el trabajo real, independiente de la abstracción (cap20).
+- **Inicialización diferida**: técnica de Singleton por la que la instancia se crea y cachea en el primer acceso al método de creación estático (cap18).
+- **Interfaz**: contrato de comportamiento que una clase implementa; no puede declarar campos, y una clase puede implementar varias (cap02).
+- **Invariante**: propiedad de la superclase que una subclase debe preservar según el principio de sustitución de Liskov (cap11).
+- **Iterator**: patrón de comportamiento que permite recorrer los elementos de una colección sin exponer su representación subyacente (cap28).
+- **Iterador**: objeto independiente que encapsula el comportamiento de recorrido de una colección y mantiene su propio estado (cap28).
+- **Manejador**: en CoR, objeto autónomo con un único método de procesamiento que decide procesar la solicitud o pasarla al siguiente (cap26).
+- **Máquina de estados finitos**: concepto en el que se apoya State: estados y transiciones finitos y predeterminados (cap32).
+- **Mediator**: patrón de comportamiento que reduce dependencias caóticas forzando la comunicación a través de un objeto mediador (cap29).
+- **Memento**: patrón de comportamiento que guarda y restaura el estado previo de un objeto sin revelar su implementación; también, la instantánea inmutable (cap30).
+- **Método**: miembro de una clase que define su comportamiento (cap01).
+- **Método fábrica**: método especial que sustituye la llamada directa a `new` y es sobrescribible en subclases (cap14).
+- **Método plantilla**: en Template Method, método que encadena las llamadas a los pasos del algoritmo y no debe sobrescribirse (cap34).
+- **Objeto**: unidad que envuelve información y comportamiento; instancia concreta de una clase (cap01).
+- **Observer**: patrón de comportamiento que define un mecanismo de suscripción para notificar a varios objetos de los eventos de otro (cap31).
+- **Originadora**: en Memento, actor propietario del estado al que se delega la creación de la instantánea (cap30).
+- **Paso (Template Method)**: método en que se divide un algoritmo; puede ser abstracto, opcional o gancho (hook) (cap34).
+- **Patrón de diseño**: concepto general para resolver un problema de diseño recurrente, no una porción específica de código (cap04).
+- **Pilares de la POO**: abstracción, encapsulación, herencia y polimorfismo (cap02).
+- **Polimorfismo**: pilar de la POO por el que el programa invoca la implementación de la clase real de un objeto aunque su tipo concreto sea desconocido (cap02).
+- **Principio de abierto/cerrado**: las clases deben estar abiertas a la extensión y cerradas a la modificación (cap10).
+- **Principio de inversión de la dependencia**: alto y bajo nivel dependen de abstracciones; las abstracciones no dependen de detalles (cap13).
+- **Principio de responsabilidad única**: una clase sólo debe tener una razón para cambiar (cap09).
+- **Principio de segregación de la interfaz**: no se debe forzar a los clientes a depender de métodos que no utilizan (cap12).
+- **Principio de sustitución de Liskov**: las subclases deben poder sustituir a la superclase sin descomponer el código cliente (cap11).
+- **Principio de Hollywood**: lema de los frameworks: "no nos llames, nosotros te llamamos a ti" (cap05).
+- **Producto**: objeto que devuelve un método fábrica; todos los productos comparten una interfaz común (cap14).
+- **Prototipo**: objeto que soporta la clonación a través de la interfaz común del patrón Prototype (cap17).
+- **Prototype**: patrón creacional que permite copiar objetos existentes sin que el código dependa de sus clases (cap17).
+- **Proxy**: patrón estructural que proporciona un sustituto o marcador de posición que controla el acceso a otro objeto (cap25).
+- **Registro de prototipos**: variante de Prototype que centraliza prototipos de uso frecuente, típicamente en una tabla hash (cap17).
+- **Reutilización**: capacidad de reaprovechar código; junto con la extensibilidad, uno de los ejes del buen diseño (cap05).
+- **SOLID**: conjunto de cinco principios para diseños más comprensibles, flexibles y mantenibles (cap08).
+- **Singleton**: patrón creacional que asegura una única instancia de una clase y ofrece un punto de acceso global a ella (cap18).
+- **State**: patrón de comportamiento que permite a un objeto alterar su comportamiento cuando su estado interno cambia (cap32).
+- **Strategy**: patrón de comportamiento que define una familia de algoritmos, los coloca en clases separadas y los hace intercambiables (cap33).
+- **Subclase**: clase hija que hereda estado y comportamiento de una superclase y define solo lo que es diferente (cap01).
+- **Superclase**: clase padre de la que heredan las subclases en una jerarquía (cap01).
+- **Template Method**: patrón de comportamiento que define el esqueleto de un algoritmo en la superclase y permite a las subclases sobrescribir pasos (cap34).
+- **Visitor**: patrón de comportamiento que separa algoritmos de los objetos sobre los que operan, colocándolos en una clase visitante aparte (cap35).
+- **Wrapper**: objeto encapsulador que envuelve a otro; nombre alternativo de Adapter y de Decorator (cap22).
