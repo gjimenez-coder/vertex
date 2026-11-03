@@ -1,0 +1,100 @@
+# Glosario — Designing Data-Intensive Applications
+
+- **2PL (two-phase locking)**: mecanismo pesimista de serializabilidad que bloquea objetos, con riesgo de deadlocks y mal rendimiento (cap07).
+- **2PC (two-phase commit)**: protocolo de commit atómico distribuido con un coordinador, bloqueante si el coordinador cae (cap09).
+- **ACID**: Atomicity, Consistency, Isolation, Durability; término impreciso en la práctica, con la C a cargo de la aplicación (cap07).
+- **Almacenamiento columnar**: formato que, con compresión por mapas de bits, ordenación y procesamiento vectorizado, minimiza los datos leídos del disco en consultas analíticas (cap03).
+- **Amplificación de escritura**: coste adicional de escritura que los LSM-trees reducen al convertir escrituras aleatorias en secuenciales (cap03).
+- **Anti-entropy**: proceso que, junto al read repair, hace converger las réplicas en sistemas leaderless (cap05).
+- **Avro**: formato de codificación que empareja campos por nombre entre writer's schema y reader's schema, sin tags, favoreciendo esquemas dinámicos (cap04).
+- **Backward compatible**: propiedad por la que código nuevo puede leer datos escritos por código viejo (cap04).
+- **BASE**: término que solo significa "no ACID" (cap07).
+- **Batch processing**: procesamiento offline de un gran volumen de entrada acotada cuya métrica clave es el throughput (cap01, cap10).
+- **B-trees**: estructura de índice update-in-place con rendimiento predecible y cada clave en un único lugar, útil para transacciones (cap03).
+- **Bitcask**: motor de almacenamiento log-structured de tipo append-only (cap03).
+- **Broadcast hash join**: join distribuido que carga en memoria una entrada pequeña para unirla con la grande (cap10).
+- **CAP**: hoy de valor histórico; ante una partición hay que elegir entre consistencia (linealizabilidad) o disponibilidad (cap09).
+- **Causalidad**: orden parcial con ramas y fusiones; la consistencia causal es el modelo más fuerte que no se ralentiza por la red (cap09).
+- **CDC (change data capture)**: captura implícita del changelog de una base de datos para mantener al día sistemas derivados (cap11, cap12).
+- **Chaos Monkey**: práctica de provocar faults adrede para comprobar que no se convierten en failures (cap01).
+- **Compare-and-set (CAS)**: operación de un solo objeto que, de forma linealizable, equivale al consenso y a la difusión de orden total (cap07, cap09).
+- **Consenso**: lograr que todos los nodos se pongan de acuerdo en algo; tolerante a fallos exige mayoría de nodos (cap09).
+- **Consistent prefix reads**: garantía que mitiga anomalías del retraso de replicación (cap05).
+- **Data-intensive**: aplicación cuyo reto principal son los datos (cantidad, complejidad o velocidad de cambio), no los ciclos de CPU (cap00, cap01).
+- **Data lake**: almacenamiento schema-on-read propio del estilo Hadoop frente a las bases MPP (cap10).
+- **Data warehouse**: separación de la analítica respecto al OLTP mediante ETL, modelada con esquemas en estrella o copo de nieve (cap03).
+- **Dataflow (motores de)**: Spark, Tez o Flink tratan el workflow como un solo trabajo evitando materializar el estado intermedio en HDFS (cap10).
+- **Dirty read / dirty write**: anomalías que evita el nivel read committed (cap07).
+- **Difusión de orden total (total order broadcast)**: entrega de mensajes en el mismo orden a todos los nodos; equivalente al consenso (cap09, cap12).
+- **Evolvability**: facilidad de un sistema para adaptarse al cambio (cap01, cap04).
+- **Event sourcing**: captura explícita del changelog como secuencia de eventos (cap11).
+- **Exactly-once (effectively-once)**: semántica lograda descartando la salida parcial de tareas fallidas (microbatching, checkpointing, idempotencia) (cap11).
+- **Failover**: traspaso al fallar el líder; delicado por riesgo de pérdida de escrituras, split brain y timeouts mal ajustados (cap05).
+- **Failure**: caída del sistema como un todo, frente al fault de un componente (cap01).
+- **Fan-out**: en el caso de Twitter, equilibrio entre trabajo en escritura y en lectura (cap01).
+- **Fault**: desviación o fallo de un componente (hardware, software o humano) que no debe convertirse en failure (cap01).
+- **Fencing token**: token comprobado por el recurso que impide a un nodo con creencias obsoletas corromper datos (cap08).
+- **Field tag**: identificador numérico de campo usado por Thrift y Protocol Buffers que no debe cambiarse (cap04).
+- **Forward compatible**: propiedad por la que código viejo puede leer datos escritos por código nuevo (cap04).
+- **Happens-before**: relación que define si dos operaciones son concurrentes o están ordenadas (cap05).
+- **HDFS**: sistema de ficheros distribuido que actúa como interfaz uniforme en MapReduce (cap10).
+- **Hot spot**: desequilibrio producido por el skew que concentra la carga en una partición (cap06).
+- **Impedance mismatch**: desajuste entre objetos y tablas que motiva el modelo de documentos (cap02).
+- **Índice secundario**: índice adicional que puede particionarse por documento (local) o por término (global) (cap03, cap06).
+- **Leaderless**: replicación sin líder, más robusta ante fallos pero con consistencia débil y conflictos (cap05).
+- **Lease**: concesión temporal que por sí sola no basta porque un proceso pausado puede creerla vigente (cap08).
+- **Linealizabilidad**: garantía que hace que los datos replicados parezcan una única copia con operaciones atómicas (recencia) (cap09).
+- **Load parameters**: parámetros con los que se razona la carga para analizar la escalabilidad (cap01).
+- **Locality**: beneficio de los documentos al usar el documento entero, con penalización en documentos grandes (cap02).
+- **Logical (row-based) log**: log de replicación que desacopla la replicación del motor de almacenamiento (cap05).
+- **Lost update**: anomalía detectada por algunas implementaciones de snapshot isolation (cap07).
+- **LSM-trees**: estructura log-structured que convierte escrituras aleatorias en secuenciales con alto throughput de escritura (cap03).
+- **LWW (last write wins)**: resolución que, usando time-of-day, puede perder datos por drift y saltos de reloj (cap08).
+- **Mantenibilidad**: cualidad que se apoya en operabilidad, simplicidad y evolvability (cap01).
+- **MapReduce**: trabajo con mapper, ordenación implícita (shuffle) y reducer que paraleliza por partición y acerca la computación a los datos (cap10).
+- **Marca de tiempo de Lamport**: reloj lógico que da orden total consistente con la causalidad (cap09).
+- **Monotonic reads**: garantía que mitiga anomalías del retraso de replicación (cap05).
+- **MPP**: bases de datos masivamente paralelas, contrastadas con el estilo Hadoop (cap10).
+- **Multi-leader**: replicación con varios líderes, más robusta pero con conflictos que resolver (cap05).
+- **MVCC (multiversion concurrency control)**: mecanismo con el que snapshot isolation lee de un snapshot consistente sin que lectores y escritores se bloqueen (cap07).
+- **OLAP**: carga analítica que escanea muchos registros (cap03).
+- **OLTP**: carga transaccional con pocos registros por clave (cap03).
+- **Particionamiento (sharding)**: división de los datos en particiones, cada una como una pequeña base de datos propia, para escalar (cap06).
+- **Particionamiento por hash**: reparte mejor la carga pero destruye el orden de las claves (cap06).
+- **Particionamiento por rango**: permite range scans eficientes pero arriesga hot spots con claves cercanas (cap06).
+- **Percentiles**: p50, p95, p99, p999 con los que se describe el response time como distribución (cap01).
+- **Phantom**: escritura que cambia el resultado de una búsqueda de otra transacción; solo lo evita la serializabilidad (cap07).
+- **Phi Accrual**: detector de fallos que adapta los timeouts (cap08).
+- **Protocol Buffers**: formato de codificación con field tags y generación de código (cap04).
+- **Quórum**: solapamiento `w + r > n` entre lecturas y escrituras; en general requiere mayoría absoluta para decisiones importantes (cap05, cap08).
+- **Raft**: algoritmo de consenso tolerante a fallos que usa épocas y quórum para elegir líder (cap09).
+- **Read-after-write**: garantía que asegura ver las propias escrituras pese al retraso de replicación (cap05).
+- **Read committed**: nivel de aislamiento que evita dirty reads y dirty writes (cap07).
+- **Read repair**: corrección de réplicas desactualizadas durante la lectura en sistemas leaderless (cap05).
+- **Rebalanceo**: redistribución de particiones entre nodos; `hash mod N` es un antipatrón (cap06).
+- **Replicación**: mantener copias de los mismos datos en varias máquinas para disponibilidad, latencia y escalabilidad de lecturas (cap05).
+- **Response time**: distribución de tiempos de respuesta que se describe con percentiles y cuyas tail latencies importan (cap01).
+- **Rolling upgrade**: actualización por nodos que obliga a la coexistencia de versiones viejas y nuevas (cap04).
+- **Safety y liveness**: propiedades que permiten razonar y probar la corrección de algoritmos distribuidos (cap08).
+- **Schema-on-read**: enfoque que no refuerza esquema al escribir, propio de documentos y grafos (cap02).
+- **Schema-on-write**: enfoque relacional que refuerza el esquema al escribir (cap02).
+- **Serializabilidad**: único aislamiento que previene todas las race conditions; se implementa con ejecución serial, 2PL o SSI (cap07).
+- **Shared-nothing**: arquitectura de escalado horizontal con nodos que no comparten recursos (cap01, cap06).
+- **Skew**: desequilibrio en la distribución de datos o claves que produce hot spots o afecta a los joins (cap06, cap10).
+- **Snapshot isolation**: aislamiento que lee de un snapshot consistente vía MVCC y evita el read skew (cap07).
+- **Sort-merge join**: join distribuido ejecutado del lado del reducer (cap10).
+- **Split brain**: situación en la que dos nodos se creen líder, riesgo del failover (cap05).
+- **SSI (serializable snapshot isolation)**: técnica optimista que promete serializabilidad con bajo coste, apta para lecturas intensivas (cap07).
+- **SSTables**: motor de almacenamiento log-structured con ficheros ordenados (cap03).
+- **Stream processing**: contraparte incremental e ilimitada del batch que procesa cada evento conforme ocurre (cap11).
+- **Tail latency**: latencia de los percentiles altos que afecta a los clientes más valiosos (cap01).
+- **Thrift**: formato de codificación con field tags y generación de código (cap04).
+- **Timeout**: límite imperfecto usado para la detección de fallos; mal elegido provoca falsos positivos (cap08).
+- **TrueTime**: reloj con intervalos de confianza más seguro para ordenar eventos (cap08).
+- **Ventanas**: tumbling, hopping, sliding y de sesión para agrupar eventos en el stream processing (cap11).
+- **Version vector**: mecanismo que detecta escrituras concurrentes y evita perder datos al fusionar siblings (cap05).
+- **WAL shipping**: tipo de log de replicación basado en el write-ahead log (cap05).
+- **Write path / read path**: frontera que caches, índices y vistas materializadas desplazan, extensible hasta el cliente (cap12).
+- **Write skew**: anomalía en que dos transacciones leen lo mismo y escriben objetos distintos invalidando una premisa; solo la evita la serializabilidad (cap07).
+- **XA**: estándar de transacciones distribuidas que amplifica fallos y causa problemas operativos (cap09, cap12).
+- **ZooKeeper**: servicio de coordinación probado para consenso, locks, membresía y enrutamiento (cap06, cap09).
