@@ -1,0 +1,66 @@
+# Glosario — AI Under Attack
+
+- **Alignment drift**: deriva de la alineación de un modelo; el fine-tuning puede degradarla, por lo que una versión modificada debe tratarse como un sistema nuevo a evaluar (cap01).
+- **Ambient authority (autoridad ambiental)**: modo de fallo central de los agentes, en el que una acción legítima puede ser dañina si apunta al objetivo equivocado (cap18).
+- **Authority laundering**: recuperación que elude la autorización al no considerar el propósito; se evita autorizando server-side antes de recuperar y teniendo en cuenta el propósito (cap20).
+- **Backdoor**: puerta trasera incrustada en los pesos que sobrevive a la cuantización, al fine-tuning y a la distilación, de modo que un dataset envenenado afecta a muchos despliegues (cap11).
+- **Circuit breaker**: respuesta graduada en runtime que corta o degrada a solo lectura para reducir dwell time y blast radius ante comportamiento anómalo (cap06, cap10).
+- **Clean-label poisoning**: patrón de poisoning con etiquetas correctas que deja una firma detectable probando por subgrupo y por variación (cap11).
+- **Confirmation gate**: control de contención que exige confirmación antes de ejecutar una acción, asumiendo que el fallo puede ocurrir (cap04).
+- **Confused deputy**: ataque que usa la autoridad legítima del sistema para un fin no autorizado; el atacante persuade al agente de actuar como su diputado confundido (cap03, cap09, cap10).
+- **Containment (contención)**: pilar de defensa que asume el fallo y lo limita con least authority, aislamiento y confirmation gates, con capas que fallan de forma independiente (cap04).
+- **Context poisoning**: envenenamiento del contexto a nivel de sesión que moldea gradualmente el estado para evadir el filtrado por mensaje (cap07).
+- **Conversation hijacking**: secuestro de la conversación como ataque a nivel de sesión en sistemas con estado (cap07).
+- **Data poisoning (envenenamiento de datos)**: corrupción de los datos de entrenamiento; el web-scale poisoning es práctico con tasas de contaminación por debajo del 0.1% (cap02, cap11).
+- **Defense in depth (defensa en profundidad)**: principio que combina capas independientes con degradación elegante para fallar seguro y reducir capacidad de forma escalonada (cap03, cap04).
+- **Differential privacy**: mitigación frente a la extracción de modelos que, junto con rate-limiting y menor precisión de salida, limita la exposición de datos memorizados (cap11).
+- **DOMPurify**: herramienta de saneamiento usada antes del DOM, junto con CSP y Trusted Types, para no renderizar salida del modelo en páginas privilegiadas (cap14).
+- **Drift multi-turno**: forma de goal hijacking en que el objetivo del agente se desvía a lo largo de varios turnos (cap10).
+- **Embedding attack**: ataque que controla *qué* se recupera manipulando la geometría del espacio vectorial del RAG (cap08).
+- **EU AI Act**: marco regulatorio europeo con rollout por fases; su Artículo 14 trata la supervisión humana y forma parte del mapa de obligaciones de cumplimiento (cap11, cap16, cap19).
+- **Fail closed (fallar cerrado)**: comportamiento por defecto en flujos de alto riesgo donde, si un control o la cadena de provenance se rompe, el sistema deniega en vez de permitir (cap07, cap13, cap16).
+- **Field Artifact**: recurso del Practitioner Toolkit asociado a cada capítulo para pasar del concepto a una actividad operativa (cap00, cap25).
+- **Fine-tuning**: ajuste del modelo que puede degradar la alineación; es el vector que más controla el practicante y donde paga auditar el dataset y evaluar el modelo afinado (cap01, cap11).
+- **Goal hijacking**: secuestro del objetivo del agente (reemplazo directo, redirección implícita, metas laxas, drift multi-turno, plan injection, observation poisoning) para usar herramientas permitidas con un fin corrupto (cap10).
+- **Gradual trust building**: construcción gradual de confianza como ataque a nivel de sesión que evade la detección por mensaje (cap07).
+- **GRC (gobernanza, riesgo y cumplimiento)**: tres trabajos distintos: la gobernanza decide y responsabiliza, la gestión de riesgo identifica fallos y controles, y el cumplimiento mapea obligaciones vivas a evidencia (cap19).
+- **Guardrails**: segunda línea de defensa que valida entradas y salidas fuera del modelo para que un fallo de prompt no se vuelva fallo de producción (cap02, cap16).
+- **HITL (human-in-the-loop)**: supervisión humana requerida antes de acciones de alto impacto o irreversibles (cap16).
+- **HOTL (human-on-the-loop)**: supervisión humana para acciones reversibles y de bajo impacto (cap16).
+- **IaC (infrastructure as code)**: enfoque que, junto con GitOps, hace exigibles y auditables los valores seguros por defecto, rechazando definiciones inseguras antes del merge (cap13).
+- **Indirect prompt injection (inyección indirecta de prompts)**: inyección que amplía la superficie a todo contenido externo recuperado (web, documentos, correos, fuentes RAG) tratado como contexto confiable (cap03, cap06, cap08).
+- **Instruction hierarchy (jerarquía de instrucciones)**: orden de autoridad (sistema > desarrollador > usuario; contenido externo = evidencia, no autoridad) que es fundamento de la ingeniería de prompts defensiva (cap04, cap15).
+- **Interpretability (interpretabilidad)**: pilar de defensa que habilita la investigación con transparencia acotada para no entregar un mapa al atacante (cap04).
+- **Jailbreaking**: técnica que busca sacar al modelo de los límites del proveedor; su eficacia es inestable y cambia con cada actualización (cap06).
+- **Label flipping**: patrón de poisoning que invierte etiquetas y deja una firma detectable por subgrupo y variación (cap11).
+- **Least privilege (mínimo privilegio)**: principio de conceder permisos estrechos; debe aplicarse a combinaciones de herramientas, no a herramientas aisladas (cap03, cap10).
+- **MCP**: protocolo de integración de herramientas que se apoya en OAuth 2.1/PKCE para autorizar acciones (cap14).
+- **Memory tiering**: particionamiento por niveles de la memoria como defensa en sistemas con estado, junto con session boundaries y validación de estado (cap07).
+- **MITRE ATLAS**: marco de referencia para mapear amenazas y medir la robustez de la IA; capa de mapeo, no sustituto de la evidencia (cap04, cap09, cap12, cap21).
+- **MLOps security**: seguridad de pipeline en la que cada etapa es un punto de control, con la regla de "no bypass, no backward flow" (cap13).
+- **Model card**: ficha del modelo que no describe la versión modificada por fine-tuning, que debe tratarse como sistema nuevo (cap01).
+- **Model extraction (extracción de modelos)**: robo de IP o exposición de datos memorizados que no corrompe el modelo; se mitiga con rate-limiting, menor precisión de salida y differential privacy (cap11).
+- **Model registry**: puerta de promoción que solo permite servir artefactos aprobados verificando registro, hash, firma, formato, scanner y revocación en el model loading gate (cap13, cap20).
+- **ModelScan**: herramienta para escanear artefactos de modelo en busca de backdoors y código malicioso (cap11, cap17).
+- **NIST AI RMF**: marco de gestión de riesgo de IA usado como capa de mapeo en evaluación, cumplimiento y operación (cap12, cap19, cap21).
+- **No-determinismo**: propiedad de la IA moderna que razona de forma probabilística y puede comportarse distinto entre prompts, usuarios, herramientas e integraciones (cap01).
+- **Observability (observabilidad)**: pilar de defensa que correlaciona comportamiento, contexto, herramientas y resultados sin crear silos, como una cadena de evidencia (cap04, cap20).
+- **Observation poisoning**: forma de goal hijacking que envenena las observaciones que recibe el agente (cap10).
+- **OPA/Gatekeeper**: motor de policy as code para aplicar políticas en el runtime de forma cambiable sin redeploy (cap13).
+- **OWASP Top 10 for LLMs**: catálogo de riesgos de LLM usado como capa de mapeo; LLM01:2025 cubre prompt injection directa e indirecta (cap09, cap12, cap15).
+- **PASTA**: metodología de modelado de amenazas que, junto con STRIDE, sirve de base y requiere extensiones de IA (cap02).
+- **Pickle**: formato de artefacto que puede ejecutar código al cargar; se prefiere safetensors y se pone en cuarentena el pickle no confiable (cap11, cap17).
+- **Plan injection**: forma de goal hijacking que inyecta pasos en el plan del agente (cap10).
+- **Policy Puppetry**: prompt injection universal que anuló la alineación en todos los modelos frontier con una sola plantilla, mostrando la necesidad de defensas en capas (cap01).
+- **Prompt injection (inyección de prompts)**: ataque que explota que los LLM siguen instrucciones y no distinguen las del usuario de las del atacante; la directa aprovecha la falta de frontera entre instrucciones del sistema y del usuario (cap02, cap06).
+- **Provenance**: procedencia completa (training run, dataset, evaluación, aprobación, firma) que debe conservarse y fallar cerrado si la cadena se rompe (cap03, cap13).
+- **RAG (Retrieval-Augmented Generation)**: arquitectura que ancla las salidas en fuentes recuperadas y crea un canal de entrada indirecto que debe tratarse como infraestructura crítica (cap03, cap08).
+- **RAG poisoning**: contaminación de las fuentes del RAG que vuelve persistente la inyección indirecta y afecta a todo usuario que recupere la fuente (cap06, cap08).
+- **Robustness (robustez)**: pilar de defensa trabajado en tres capas (adversarial training, context/prompt engineering con jerarquía de instrucciones y runtime defenses) y medido con red team y MITRE ATLAS (cap04).
+- **Safetensors**: formato de artefacto preferido sobre pickle por no ejecutar código al cargar (cap11, cap17).
+- **SBOM / AI SBOM**: inventario de componentes (y su variante para IA) usado con VEX para gestionar dependencias y hacer explícita la confianza transitiva (cap11, cap17).
+- **Shadow mode**: despliegue de un guardrail que observa sin imponer, usado antes de activarlo en producción (cap16).
+- **STRIDE**: metodología de modelado de amenazas base que necesita extensiones de IA como prompt injection, data poisoning y abuso de recuperación (cap02).
+- **Tool chaining**: encadenamiento de herramientas cuyos pasos parecen inocentes mientras la secuencia completa es el ataque (cap09, cap10).
+- **Trust boundary (frontera de confianza)**: puntos clave (input/instruction, retrieval, tool, sesión/persistencia) donde la aplicación del control ocurre o se omite (cap05).
+- **Zero Trust (para agentes)**: enfoque en que cada acción del agente responde seis preguntas (quién actúa, cuya autoridad, qué permiso, qué frontera, qué aprobación y cómo se audita/revoca) para no tratar la autenticación como permiso para actuar (cap18).
