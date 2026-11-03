@@ -1,0 +1,43 @@
+# Glosario
+
+- **@EventPattern**: decorador usado en NestJS para procesar eventos de forma asíncrona en la comunicación entre microservicios vía TCP (cap00).
+- **@MessagePattern**: decorador usado en NestJS para procesar peticiones de forma asíncrona en la comunicación entre microservicios vía TCP (cap00).
+- **app.module.ts**: archivo incluido en cada microservicio que define sus módulos, servicios y controladores (cap00).
+- **Aislamiento (Docker)**: cada contenedor opera en un entorno aislado, lo que minimiza que un fallo afecte a otros y aísla del sistema operativo anfitrión (cap00).
+- **Arquitectura de microservicios**: enfoque que refactoriza aplicaciones monolíticas en servicios independientes y autónomos, no atados a una tecnología concreta (cap00).
+- **Arquitectura modular**: diseño que favorece la separación y organización del código encapsulando funcionalidad relacionada en módulos reutilizables entre microservicios (cap00).
+- **auth-service**: ejemplo de microservicio que reside en su propio directorio y requiere arranque separado (cap00).
+- **Comunicación event-driven**: modo de comunicación entre microservicios en NestJS basado en eventos (cap00).
+- **Comunicación request-response**: modo de comunicación entre microservicios en NestJS basado en petición y respuesta (cap00).
+- **Consistencia de datos**: reto de la implementación de microservicios consistente en asegurar la coherencia de los datos entre servicios (cap00).
+- **Contenedor**: unidad ligera y portátil en la que Docker empaqueta y distribuye aplicaciones, ejecutándose en un entorno aislado (cap00).
+- **Controladores**: elemento de NestJS que maneja operaciones REST (métodos HTTP) e invoca los métodos de los servicios (cap00).
+- **data-service**: ejemplo de microservicio que reside en su propio directorio y requiere arranque separado (cap00).
+- **Decoradores**: característica de TypeScript que adjunta metadatos a clases, métodos y propiedades; simplifican enrutamiento, middleware y validación reduciendo código repetitivo (cap00).
+- **Despliegue independiente**: capacidad de desplegar cada módulo o servicio por separado, acelerando el despliegue y facilitando la detección de errores (cap00).
+- **Docker**: plataforma de código abierto para construir, empaquetar y distribuir aplicaciones en contenedores ligeros y portátiles (cap00).
+- **Docker Compose**: herramienta que define y organiza aplicaciones multicontenedor con un archivo YAML declarativo y las despliega con un solo comando (cap00).
+- **Docker Hub**: registro oficial con un ecosistema de imágenes preconfiguradas que sirven de base para construir microservicios (cap00).
+- **Escalabilidad**: capacidad de escalar componentes o servicios de forma independiente, con asignación de recursos más eficiente, mejor rendimiento y menor coste (cap00).
+- **Express**: tecnología sobre la que se apoya NestJS, de la que hereda las técnicas de implementación del patrón MVC (cap00).
+- **Flexibilidad tecnológica**: ventaja de los microservicios que permite a cada equipo elegir y actualizar la tecnología más adecuada sin arriesgar el sistema completo (cap00).
+- **HTTP**: protocolo de transporte soportado por NestJS para la comunicación (cap00).
+- **Imágenes preconfiguradas**: imágenes disponibles en Docker Hub que sirven de base para construir microservicios y facilitan la colaboración entre equipos (cap00).
+- **Independencia funcional**: característica de los microservicios que elimina interdependencias de código entre servicios y mejora la extensibilidad (cap00).
+- **Inyección de dependencias (DI)**: sistema de NestJS con un contenedor integrado que gestiona automáticamente las dependencias de las clases, promoviendo modularidad, testabilidad y reutilización (cap00).
+- **JavaScript progresivo**: estilo de JavaScript que usa NestJS en su desarrollo (cap00).
+- **main-service**: ejemplo de proyecto o microservicio principal que reside en su propio directorio y requiere arranque separado (cap00).
+- **Microservicios**: conjunto de enfoques arquitectónicos donde cada servicio opera de forma autónoma como bloque de construcción de ecosistemas digitales de gran escala (cap00).
+- **Middleware**: lógica añadida al ciclo petición/respuesta que da control granular del flujo de datos y facilita integrar autenticación, logging y manejo de errores (cap00).
+- **Módulos**: elemento de NestJS que organiza la lógica en piezas de código reutilizables (componentes) (cap00).
+- **Monolito**: arquitectura en la que actualizar código obliga a re-ejecutar todo el sistema, un error puede dejar inaccesible el servidor entero y ampliar funciones exige refactorización significativa (cap00).
+- **MVC (Model-View-Controller)**: patrón cuyas técnicas de implementación hereda NestJS a través de Express (cap00).
+- **NestJS**: framework basado en Node.js y TypeScript para crear aplicaciones de servidor escalables, con DI avanzada y soporte de varios patrones de programación (cap00).
+- **Node.js**: entorno sobre el que se basa NestJS (cap00).
+- **notification-service**: ejemplo de microservicio que reside en su propio directorio y requiere arranque separado (cap00).
+- **Seguridad (Docker)**: beneficio del aislamiento de contenedores que reduce fallos en cascada, accesos no autorizados y fugas de datos (cap00).
+- **Servicios**: elemento de NestJS que gestiona la lógica y la funcionalidad; sus métodos se invocan desde el controlador (cap00).
+- **TCP**: protocolo de transporte soportado por NestJS y usado por defecto en la plataforma de microservicios basada en Nest (cap00).
+- **TypeScript**: lenguaje sobre el que se basa NestJS y que aporta los decoradores (cap00).
+- **WebSockets**: protocolo de transporte soportado por NestJS para la comunicación (cap00).
+- **YAML**: formato de archivo con el que Docker Compose define de forma declarativa parámetros, dependencias y red de una aplicación multicontenedor (cap00).
