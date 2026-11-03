@@ -1,0 +1,81 @@
+# Glosario — Web Application Security (2nd Edition)
+
+- **Account takeover (ATO)**: toma completa de una cuenta; el Linux ATO encadena XXE sobre /etc/passwd y /etc/shadow para obtener el hash, crackearlo y entrar por SSH (cap12).
+- **Allowlist**: lista de valores permitidos; defensa superior a la blocklist, p. ej. restringir los campos aceptados antes de escribir en la base de datos o los comandos ejecutables en el servidor (cap13, cap31, cap33).
+- **Análisis dinámico**: técnica que ejecuta la aplicación y analiza sus salidas; más costoso y lento que el estático, pero con menos falsos positivos y bueno para lenguajes dinámicos (cap26).
+- **Análisis estático**: técnica que examina el código sin ejecutarlo, ideal para lenguajes tipados y el OWASP top 10, pero genera muchos falsos positivos (cap26).
+- **Ataque de diccionario**: técnica de recon que prueba nombres de una lista conocida (p. ej. dnscan); mucho más eficiente que la fuerza bruta pura (cap04).
+- **Autenticación**: mecanismo que identifica al usuario; esquemas principales HTTP Basic, HTTP Digest y OAuth, siendo digest superior a basic (cap03, cap05).
+- **Autorización**: mecanismo que define el acceso del usuario; debe estar centralizada y cubrir settings, resets de contraseña, mensajes privados y funciones de pago (cap03).
+- **BCrypt**: algoritmo de hashing lento recomendado para almacenar credenciales, frente a MD5 que es vulnerable a rainbow tables (cap21).
+- **Blocklist**: lista de valores prohibidos; defensa pobre porque es incompleta y temporal y se evade fácilmente (p. ej. codificando el payload en base64) (cap13, cap25).
+- **Botnet**: red de equipos reales (PCs, móviles, IoT) infectados por malware que abruman al objetivo con tráfico de apariencia legítima en un DDoS (cap14, cap32).
+- **Bug bounty program**: programa (p. ej. HackerOne, Bugcrowd) que incentiva económicamente el reporte de vulnerabilidades; complementa la divulgación responsable (cap26).
+- **Business logic vulnerability**: vulnerabilidad en la implementación de una regla de negocio; única por aplicación, difícil de detectar con tooling y de alto impacto (cap18, cap36).
+- **Business rules**: reglas específicas de la empresa que las implementa, p. ej. permitir cancelar una reserva solo si faltan más de 24 horas (cap18).
+- **Clickjacking**: ataque que superpone un iframe invisible (`opacity: 0`) con `pointer-events: none` para desviar clics hacia funcionalidad privilegiada, como un keylogger de UI (cap16, cap34).
+- **Code injection**: inyección contra un intérprete o CLI; nivel de gravedad intermedio entre SQL injection y command injection (cap13).
+- **Command injection**: inyección contra el sistema operativo anfitrión; el nivel más peligroso, pues con superusuario en Unix se controla todo el OS (cap13).
+- **Content Security Policy (CSP)**: tecnología del navegador que bloquea por defecto inline script y `eval`; una strict CSP con nonce o hash defiende contra XSS y es primera línea de defensa (cap22, cap28).
+- **CORS (Cross-Origin Resource Sharing)**: mecanismo que flexibiliza la Same Origin Policy; se configura con least privilege (allowlist de orígenes, evitar `*`) y preflight (cap22).
+- **CSRF (Cross-Site Request Forgery)**: ataque que explota la confianza navegador-usuario-servidor para hacer peticiones privilegiadas en nombre del usuario sin que lo note (cap11, cap29).
+- **CSRF token**: token único por sesión y usuario, criptográfico y con expiración; la defensa anti-CSRF más potente, con variante stateless para APIs REST (cap11, cap29).
+- **CVE (Common Vulnerabilities and Exposures)**: base de datos de vulnerabilidades conocidas (de Mitre) que permite localizar y reutilizar ataques contra dependencias no parcheadas (cap06, cap17, cap35).
+- **CVSS v3.1**: sistema de scoring de vulnerabilidades gratuito y de propósito general, dividido en métricas base, temporal y environmental (cap27).
+- **Data Transfer Object (DTO)**: objeto que rechaza parámetros adicionales al pasar los datos por su constructor; mitiga el mass assignment (cap33).
+- **Delta identification**: fase del threat modeling que cruza attack vectors con mitigaciones; sin mitigación suficiente para cada vector la feature no debe lanzarse (cap24).
+- **Dependency tree**: árbol formado por una dependencia y sus fourth-party dependencies, que en apps grandes alcanza miles de versiones únicas; `npm ls` lo lista (cap35).
+- **DDoS (distributed denial of service)**: forma de DoS en que múltiples atacantes o botnets inundan un servidor, en la práctica a nivel de red; no se previene pero se mitiga (cap14, cap32).
+- **Divulgación responsable**: programa que da una ruta legal clara para que los usuarios reporten vulnerabilidades, con posible cláusula de no-publicación durante la corrección (cap26).
+- **DoS (denial of service)**: cualquier esfuerzo automatizado que degrada o impide la usabilidad de una aplicación web; es cuestión de grado, no binaria (cap14, cap32).
+- **DOM-based XSS**: XSS que se almacena y ejecuta en el navegador sin tocar el servidor; requiere un source y un sink y depende de la implementación del navegador (cap10).
+- **Entity encoding**: codificación de los "big five" caracteres HTML que protege nodos tipo `<div>`, pero no contenido dentro de `<script>`, CSS ni URLs (cap28).
+- **Enumeration**: divulgación repetida de datos pequeños; se evita con IDs y endpoints no predecibles y sin revelar si falló el username o el password (cap23).
+- **External entity**: anotación de la especificación XML que importa archivos externos (p. ej. `file:///etc/passwd`), interpretada en la máquina que evalúa el XML; base del XXE (cap12, cap30).
+- **Fingerprinting**: inferir el software y su versión a partir de cabeceras, mensajes de error y páginas 404 por defecto; ligar el resultado a CVE conocidos (cap06, cap23).
+- **First-class citizen**: entidad (normalmente un objeto/dato) que puede asignarse, reasignarse, modificarse, pasarse como argumento y devolverse de una función; su diseño habilita los ataques a datos (cap15).
+- **frame-ancestors**: directiva de CSP que con `'none'` previene clickjacking; reemplazo moderno de `X-Frame-Options` (cap22, cap34).
+- **GraphQL**: tecnología que combina varias consultas REST en un solo salto de red; añadida como contenido nuevo en la 2ª edición (cap00, cap03).
+- **IDOR (Insecure Direct Object Reference)**: objetos accesibles directamente vía parámetros del usuario (query, body, `:id`) que lleva a escalada de privilegios; entró en el OWASP top 10 en 2007 (cap15, cap33).
+- **IEEE754**: estándar de punto flotante que provoca pérdida de precisión (0.1 + 0.2 = 0.30000000000000004), peligroso en cálculos financieros repetidos (cap18).
+- **Injection**: clase de ataque que requiere un payload del usuario y un intérprete que lo ejecuta por falta de saneamiento (cap13, cap31).
+- **JSON**: formato ligero y legible, habitual en tránsito para REST y recomendado para datos estructurados consumidos por JavaScript; migrar a él puede eliminar el XXE (cap03, cap30).
+- **Light pattern**: patrón de diseño de UX que guía al usuario hacia mejores decisiones de seguridad y privacidad; se coloca donde se invoca el riesgo (cap23).
+- **Mass assignment**: pasar claves extra (p. ej. `isAdmin: true`) a funciones que no validan las keys del objeto; se mitiga con validación y allowlist (cap15, cap33).
+- **MFA (multi-factor authentication)**: mecanismo que elimina los inicios de sesión remotos no iniciados por el dueño de la cuenta; se recomienda ofrecerlo (cap21).
+- **mXSS (mutation-based XSS)**: XSS que usa payloads seguros que mutan en inseguros tras la sanitización, burlando filtros como DOMPurify, OWASP AntiSamy y Google Caja (cap10).
+- **NVD (National Vulnerability Database)**: base de datos de vulnerabilidades del NIST; vía rápida para localizar fallos conocidos y punto de partida para evaluar árboles de dependencias (cap17, cap35).
+- **OAuth**: esquema de autenticación cómodo pero que propaga compromisos; sus shapes (OAuth 2.0) se deducen con documentación pública (cap03, cap05).
+- **OSS (open source software)**: software de código abierto del que depende el software moderno; rara vez auditado con el rigor del código propio, es un vector de entrada preferente (cap17).
+- **Package manager**: gestor (npm, Maven, NuGet, Conan, Spack) que resuelve dependencias recursivas; una subdependencia maliciosa puede comprometer toda la aplicación (cap17).
+- **PII (Personally Identifiable Information)**: datos personales que, junto a los financieros, deben cumplir la ley y poder externalizarse a un proveedor conforme (cap21).
+- **Prepared statements**: primera línea de defensa contra SQL injection; compilan la consulta con bind variables antes de insertar datos del usuario, fijando la intención (cap31).
+- **Primary key scanning**: técnica de recon que identifica la base de datos por el formato de sus claves primarias (p. ej. el `ObjectId` de 12 bytes de MongoDB) (cap06).
+- **Principle of least authority**: principio que da a cada módulo solo el acceso que necesita para limitar el daño de una brecha (cap31).
+- **Programmed side effects**: usos no previstos de la funcionalidad programada; p. ej. manipular un pool de liquidez local pequeño con capital grande (cap18).
+- **Prototype pollution**: ataque en lenguajes con herencia prototípica (JavaScript) que contamina `Object.prototype` o el constructor y propaga el cambio a objetos relacionados (cap16, cap34).
+- **Pruebas de regresión de vulnerabilidades**: pruebas que impiden que fallos ya cerrados reaparezcan; difieren de las funcionales solo en su propósito (cap20, cap26, cap27).
+- **Quasi-cash**: vulnerabilidad de lógica de negocio en que un cliente que también es comerciante abusa del cashback mediante transacciones automatizadas contra sí mismo (cap18).
+- **RBAC (role-based access control)**: modelo de permisos por niveles que usan casi todas las aplicaciones, rara vez un único nivel para todos (cap02).
+- **Recon (reconnaissance)**: fase exploratoria de recopilación de datos previa al hackeo, cuyo fin es construir un mapa profundo de la aplicación para priorizar (cap02, cap08).
+- **Reflected XSS**: XSS en que el servidor refleja el payload sin almacenarlo; evade mejor la detección pero es más difícil de distribuir masivamente (cap10).
+- **Regex DoS (ReDoS)**: DoS en que una regex maliciosa (a menudo con el operador greedy `+`) provoca backtracking exponencial; `/^((ab)*)+$/` duplica su tiempo cada dos caracteres (cap14, cap32).
+- **REST**: estilo de API que exige separación del cliente, statelessness, cacheabilidad y endpoints jerárquicos con verbos HTTP (cap03, cap05).
+- **Same Origin Policy (SOP)**: defensa del navegador que CORS flexibiliza de forma controlada (cap01, cap22).
+- **Serialización**: conversión de datos crudos a formatos transferibles/almacenables (JSON, XML, YAML, base64); un serializador débil puede derivar en code injection vía `eval()` (cap15, cap33).
+- **Sink**: API o punto que ejecuta un payload; toda vulnerabilidad XSS explotable se compone de un sink y un source (cap10, cap28).
+- **Source**: API o punto que acepta el payload; junto al sink forma un XSS explotable (cap10).
+- **SQL injection**: la forma más común de inyección y de las más fáciles de defender; su causa raíz es concatenar entradas del usuario en queries en vez de parametrizar (cap13, cap31).
+- **SSDL**: ciclo de desarrollo de software seguro en el que se integran el descubrimiento y la gestión de vulnerabilidades (cap26, cap27).
+- **SSL/TLS**: cifrado del dato en tránsito exigido por HTTPS; TLS es más seguro que SSL (cap01, cap21).
+- **Stored XSS**: XSS cuyo payload se almacena en base de datos antes de ejecutarse; fácil de detectar (server-side) pero puede afectar a muchos usuarios (cap10).
+- **Tabnabbing**: ataque de cliente que abusa de `window.opener`; el tradicional ataca desde la pestaña que abre y el reverse desde la pestaña abierta (cap16, cap34).
+- **Threat actor**: atacante potencial (usuario interno, externo o máquina, autenticado o no), cada uno con su propia superficie de ataque (cap24).
+- **Threat modeling**: método para mejorar la postura de seguridad que identifica amenazas, threat actors, mitigaciones y el delta entre ellas (cap24).
+- **Transferencia de zona DNS**: técnica de recon que explota servidores DNS mal configurados (`host -t`, `host -l`) para revelar subdominios con sus IP (cap04).
+- **Web 2.0**: etapa que trasladó funcionalidad del servidor al cliente y desplazó el objetivo del ataque hacia el usuario y la aplicación, popularizando phishing, DoS y XSS (cap01, cap16).
+- **Worst-case design**: diseño que asume el peor escenario; mitigación de lógica de negocio a nivel de arquitectura frente al best-case design (cap24, cap36).
+- **XSS (Cross-Site Scripting)**: vulnerabilidad que explota que las apps ejecutan scripts en el navegador; se divide en stored, reflected y DOM-based (cap10, cap28).
+- **XXE (XML External Entity)**: ataque que explota parsers XML mal configurados que aceptan external entities; fácil de mitigar pero potencialmente devastador (cap12, cap30).
+- **YoYo attack**: DoS que explota el autoescalado de la nube con oleadas intermitentes que degradan el servicio e inflan los costes de hosting (cap14).
+- **Zero Trust Architecture**: patrón (NIST SP-800-207) que sustituye la confianza implícita por verificación explícita y continua en cada acción privilegiada (cap21, cap37).
