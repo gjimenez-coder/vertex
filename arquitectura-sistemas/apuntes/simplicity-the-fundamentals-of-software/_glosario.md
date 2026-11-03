@@ -1,0 +1,61 @@
+# Glosario — Code Simplicity: The Fundamentals of Software
+
+- **Ayudar (to help)**: hacer más fácil que alguien haga algo; es el contenido del propósito del software (cap03).
+- **Bit rot**: degradación del código que no se usa; por eso debe eliminarse el código innecesario (cap05).
+- **Buen programador**: quien entiende lo que hace y hace su código lo más simple posible para otros (cap00, cap01).
+- **Bugzilla**: proyecto real sobre el que el autor probó durante años las ideas del libro (cap00).
+- **Calidad del diseño**: debe ser proporcional al tiempo futuro durante el cual el sistema seguirá ayudando a las personas (cap04).
+- **Cambio (Ley del)**: cuanto más tiempo exista tu programa, más probable es que cualquier parte tenga que cambiar (cap05, cap11).
+- **Cambios pequeños**: hacer cambios pequeños reduce defectos y mantenimiento (cap06).
+- **Comentarios**: deben explicar el porqué, no el qué (cap07, cap11).
+- **Complejidad**: núcleo de la mala programación; se acumula sobre sí misma porque cada función debe coordinarse con las existentes (cap01, cap08).
+- **Complejidad inevitable**: la que viene del hardware u otras fuentes externas; se oculta tras un envoltorio simple (cap08).
+- **Complejidad irresoluble**: la que delata un error de diseño en un nivel más profundo del sistema (cap08).
+- **Consistencia**: hacer las cosas igual en todas partes, incluido el comportamiento interno; parte esencial de la simplicidad (cap07, cap11).
+- **Defecto (Ley de la Probabilidad de Defectos)**: la probabilidad de introducir un defecto es proporcional al tamaño de los cambios que haces (cap06, cap11).
+- **Desarrollo incremental**: construir y rediseñar pieza por pieza, en orden de simplicidad; evita las tres fallas (cap05, cap11).
+- **Deseabilidad de un cambio**: directamente proporcional al valor e inversamente proporcional al esfuerzo; sirve para ordenar opciones (cap04).
+- **Diseño de software (software design)**: todo lo que involucra la arquitectura del sistema o las decisiones técnicas que se toman al crearlo (cap02, cap11).
+- **Diseño no es democracia**: las decisiones de diseño las toman individuos, no comités (cap02, cap11).
+- **Ecuación del Diseño de Software**: Ley Primaria; relaciona la conveniencia de un cambio con su valor y su esfuerzo (cap04, cap11).
+- **Ecuación reducida**: a largo plazo se reduce a comparar valor futuro frente a esfuerzo de mantenimiento (cap04, cap10).
+- **Esfuerzo**: todo el tiempo conectado con un cambio (investigar, comunicar, pensar, programar), no solo programar (cap04).
+- **Esfuerzo de implementación**: el de crear inicialmente el cambio; reducirlo importa menos que reducir el mantenimiento (cap04, cap10).
+- **Esfuerzo de mantenimiento**: el de mantener el cambio en el tiempo; lo ideal es que tienda a cero (cap04, cap10).
+- **Facts (hechos)**: una de las cuatro categorías de enunciados del libro; verdades generales observadas (cap02, cap11).
+- **"Funciona"**: significa que el software se comporta como lo pretendías (cap09).
+- **Grado de prueba**: combina cuántos aspectos, qué tan reciente y en cuántos entornos has probado (cap09).
+- **Ideas (del resultado)**: junto a la máquina y el código, uno de los tres factores de la calidad del resultado (cap01).
+- **Interoperabilidad**: capacidad de una tecnología de trabajar con otras; su ausencia (encierro) señala una tecnología mala (cap08, cap11).
+- **Legibilidad**: depende del uso del espacio, de buenos nombres y de comentarios que expliquen el porqué (cap07, cap11).
+- **Ley Primaria**: nombre de la Ecuación del Diseño de Software dentro del catálogo de leyes (cap11).
+- **Leyes del diseño de software**: conocibles, eternas, inmutables, fundamentalmente verdaderas y funcionan; son seis en el libro (cap02, cap10, cap11).
+- **Mal programador**: quien no entiende lo que hace y no reduce la complejidad (cap00, cap01).
+- **Mantenimiento perfecto**: meta ideal e imposible: cambio total o código nuevo infinito sin dificultad (cap07).
+- **Mejor diseño**: el que permite el mayor cambio en el entorno con el menor cambio en el software (cap06, cap11).
+- **Nombres**: deben ser lo bastante largos para comunicar sin volverse difíciles de leer (cap07, cap11).
+- **Objetivos del diseño de software**: ser lo más útil posible, seguir siéndolo y ser fácil de crear y mantener (cap03, cap11).
+- **Optimización prematura**: resolver problemas de rendimiento inexistentes; optimiza solo donde demuestres un problema real (cap06).
+- **Overengineering (sobreingeniería)**: cuando tu diseño hace las cosas más complejas en vez de simplificarlas (cap05, cap11).
+- **Piezas individuales**: unidades cuya simplicidad determina la facilidad de mantenimiento del sistema (cap07, cap10).
+- **Predecir el futuro**: el error más común y desastroso; conviene decidir con información del presente (cap04, cap05, cap11).
+- **Principios guía**: leyes y reglas que producen buen software futuro sin necesidad de predecir ese futuro (cap04).
+- **Probabilidad de valor**: a cuántas personas y con qué frecuencia ayuda un cambio; componente del valor (cap04).
+- **Programa**: (1) secuencia de instrucciones dadas a la computadora; (2) las acciones que la computadora toma como resultado (cap01, cap11).
+- **Propósito del software**: ayudar a las personas; nunca a objetos ni a la computadora (cap03, cap11).
+- **Pruebas automatizadas**: crear una prueba para cada pieza y ejecutarlas tras cada cambio (cap09).
+- **Pruebas (Ley de las)**: el grado en que conoces el comportamiento de tu software es el grado en que lo has probado con precisión (cap09, cap11).
+- **Reescribir**: empezar de cero; casi siempre una admisión de fracaso de diseño, aceptable solo en situaciones muy limitadas (cap08, cap11).
+- **Reglas (rules)**: una de las cuatro categorías de enunciados; criterios prácticos derivados de las leyes (cap02, cap11).
+- **Reinventar la rueda**: rehacer lo ya resuelto; una de las vías por las que se introduce complejidad (cap08).
+- **Rediseño en pasos pequeños**: forma de manejar la complejidad sin introducir más, alternando rediseño y funciones (cap08, cap11).
+- **Simplicidad (Ley de la)**: la facilidad de mantenimiento es proporcional a la simplicidad de las piezas individuales (cap07, cap11).
+- **Simplicidad relativa**: la simplicidad depende de la audiencia y del contexto; mucha viene de la familiaridad (cap07, cap11).
+- **Stupid, dumb simple**: ser tan simple que quien no sabe nada del código pueda aprenderlo fácilmente (cap07, cap11).
+- **Tecnología mala**: se juzga por su potencial de supervivencia, su interoperabilidad y su atención a la calidad (cap08, cap11).
+- **Tres errores (las tres fallas)**: escribir código innecesario, no hacer el código fácil de cambiar y ser demasiado genérico (cap05, cap11).
+- **Valor**: combina probabilidad de valor y valor potencial, restando el daño; valor presente más valor futuro (cap04).
+- **Wrapper (envoltorio)**: capa simple que oculta una complejidad inarreglable externa al programa (cap08, cap11).
+- **YAGNI (ampliado)**: no escribas código hasta que lo necesites y elimina el que no se use (cap05, cap11).
+- **Ser genérico**: sé solo tan genérico como sepas que necesitas ser ahora mismo (cap05, cap11).
+- **Única existencia de la información**: idealmente, cualquier pieza de información debe existir una sola vez en el sistema (cap06, cap11).
