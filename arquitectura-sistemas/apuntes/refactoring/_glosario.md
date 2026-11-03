@@ -1,0 +1,92 @@
+# Glosario — Refactoring: Improving the Design of Existing Code
+
+- **Add Parameter / Remove Parameter**: refactorización para añadir o quitar un parámetro de un método (cap10).
+- **Aliasing**: riesgo al exponer una clase extraída, que se gestiona con referencia, inmutabilidad o clonación (cap07).
+- **Change Bidirectional Association to Unidirectional**: elimina el extremo de una asociación bidireccional que no aporta, reduciendo su coste (cap08).
+- **Change Reference to Value**: convierte un objeto referencia en un value object inmutable (cap08).
+- **Change Value to Reference**: convierte un value object en un reference object comparado por identidad (cap08).
+- **Código duplicado (Duplicated Code)**: el peor olor del código, que casi todos los demás olores alimentan (cap03).
+- **Collapse Hierarchy (Colapsar jerarquía)**: fusiona una jerarquía de herencia que no aporta valor (cap11).
+- **Consolidate Conditional Expression**: une pruebas con el mismo resultado, solo si no tienen efectos secundarios, y prepara Extract Method (cap09).
+- **Consolidate Duplicate Conditional Fragments**: saca fuera el código común a todas las ramas de un condicional, incluido el `finally` (cap09).
+- **Convert Procedural Design to Objects**: distribuye el comportamiento desde datos tontos con accesores usando Extract Method y Move Method (cap12).
+- **Data Class (Clase de datos)**: clase que solo tiene campos y accesores, sin comportamiento propio (cap03).
+- **Data Clumps (Grumos de datos)**: olor en que varios datos aparecen siempre juntos y piden convertirse en un objeto (cap03).
+- **Decompose Conditional**: descompone un condicional para separar la lógica de conmutación de los detalles de cada rama (cap09).
+- **Divergent Change (Cambio divergente)**: una sola clase cambia por muchos tipos de razón distintos; cara opuesta de shotgun surgery (cap03).
+- **Dos sombreros (Los dos sombreros)**: principio de que añadir función y refactorizar son actividades separadas de las que hay que ser consciente (cap02).
+- **Duplicate Observed Data**: separa la lógica de negocio de la GUI duplicando datos mediante el patrón observer (cap08).
+- **Encapsulate Collection**: encapsula una colección con una vista de solo lectura y métodos add/remove (cap08).
+- **Encapsulate Downcast (Encapsular downcast)**: mete el downcast dentro del método y devuelve el tipo más específico posible (cap10).
+- **Encapsulate Field (Encapsular campo)**: oculta un campo tras accesores para reducir el acoplamiento (cap08).
+- **Extract Class**: divide una clase sobrecargada en dos; es inversa de Inline Class (cap07).
+- **Extract Hierarchy (Extraer jerarquía)**: convierte una clase "navaja suiza" llena de condicionales en subclases por caso especial (cap12).
+- **Extract Interface (Extraer interfaz)**: saca interfaces comunes (no código) que marcan subconjuntos de responsabilidad para el sistema de tipos (cap11).
+- **Extract Method**: da nombre a la intención de un fragmento extrayéndolo a un método propio; refactorización recurrente en casi todos los olores (cap06).
+- **Extract Subclass (Extraer subclase)**: crea una subclase para rasgos específicos; es una elección entre herencia y delegación (cap11).
+- **Extract Superclass (Extraer superclase)**: crea una superclase común a clases que comparten rasgos (cap11).
+- **Feature Envy (Envidia de atributos)**: un método usa más los datos de otro objeto que los propios y debería moverse allí (cap03).
+- **Fixture**: contexto de prueba de JUnit con `setUp` y `tearDown` (cap04).
+- **Form Template Method (Formar método plantilla)**: separa los pasos variables de los invariables y los resuelve con polimorfismo (cap11).
+- **Functional tests**: pruebas que aseguran el sistema completo y las realiza otro equipo (cap04).
+- **Grandes refactorizaciones (Big Refactorings)**: cambios de diseño a gran escala sin mecánicas precisas, avanzados mordisqueando los bordes con acuerdo del equipo (cap12).
+- **Guard Clauses (Guardas)**: cláusulas que destacan el camino normal y comunican "esto es raro, sal pronto" (cap09).
+- **Hide Delegate**: reduce el acoplamiento ocultando el delegado; inversa de Remove Middle Man (cap07).
+- **Hide Method (Ocultar método)**: oculta un método no usado por otras clases (cap10).
+- **Indirección**: mecanismo que se paga solo si comparte lógica, separa intención de implementación, aísla el cambio o codifica condicionales como mensajes (cap02).
+- **Inline Class**: funde una clase que ya no aporta en otra; inversa de Extract Class (cap07).
+- **Inline Method**: elimina la indirección innecesaria metiendo el cuerpo del método en la llamada; opuesta a Extract Method (cap06).
+- **Inline Temp**: sustituye un temporal por la expresión que lo asigna (cap06).
+- **Introduce Assertion**: hace explícitas las suposiciones del código, preservando el comportamiento y pudiendo eliminarse en producción (cap09).
+- **Introduce Foreign Method**: añade uno o dos métodos a una clase que no puedes modificar (cap07).
+- **Introduce Local Extension**: crea una extensión local (subclase o wrapper) para una clase que no puedes modificar (cap07).
+- **Introduce Null Object**: reemplaza comprobaciones repetidas de `null` por un objeto inmutable que responde con el comportamiento por defecto (cap09).
+- **Introduce Parameter Object**: sustituye una lista larga de parámetros por un objeto que los agrupa (cap10).
+- **JUnit**: framework de pruebas de Gamma y Beck que usa el patrón composite, agrupando casos en suites (cap04).
+- **Large Class (Clase grande)**: clase que intenta hacer demasiado, con muchos campos y métodos (cap03).
+- **Lazy Class (Clase holgazana)**: clase que no hace lo suficiente para justificar su existencia (cap03).
+- **Long Method (Método largo)**: método demasiado largo cuya lógica compleja sepulta la información; fuente habitual de problemas (cap03).
+- **Long Parameter List (Lista larga de parámetros)**: olor en que un método recibe demasiados parámetros (cap03).
+- **Message Chains (Cadenas de mensajes)**: secuencia de llamadas encadenadas que acopla el cliente a la estructura de navegación (cap03).
+- **Middle Man (Intermediario)**: clase que delega casi todo su trabajo en otra (cap03).
+- **Move Field**: mueve un campo a otra clase; si se combina con Move Method, se mueve primero el campo (cap07).
+- **Move Method**: mueve un método al objeto cuyos datos usa; refactorización recurrente del día a día (cap07).
+- **Patrón State/Strategy**: estructura usada para reemplazar lógica condicional por polimorfismo cuando el tipo afecta al comportamiento y el objeto es mutable (cap01, cap08).
+- **Preserve Whole Object (Preservar el objeto completo)**: pasa el objeto entero en lugar de varios de sus valores (cap10).
+- **Primitive Obsession (Obsesión por los primitivos)**: uso excesivo de tipos primitivos en lugar de objetos pequeños (cap03).
+- **Pull Up Field / Pull Up Method (Subir campo / Subir método)**: sube a la superclase los miembros comunes de las subclases (cap11).
+- **Pull Up Constructor Body (Subir el cuerpo del constructor)**: sube el cuerpo de un constructor a la superclase, dado que los constructores no se heredan (cap11).
+- **Push Down Method / Push Down Field (Bajar método / Bajar campo)**: baja a las subclases los miembros específicos (cap11).
+- **Reference object**: objeto que se compara por identidad (cap08).
+- **Refactoring (sustantivo)**: cambio en la estructura interna del código para entenderlo y modificarlo más barato, sin alterar su comportamiento observable (cap02).
+- **Refactorizar (verbo)**: aplicar una serie de refactorizaciones (cap02).
+- **Refused Bequest (Herencia rechazada)**: subclase que no usa parte de lo que hereda (cap03).
+- **Regla de tres**: pauta que indica refactorizar al encontrar la tercera repetición (cap02).
+- **Remove Control Flag**: sustituye banderas de control por `break`, `continue` o `return` (cap09).
+- **Remove Middle Man**: revierte el exceso de delegación; inversa de Hide Delegate (cap07).
+- **Remove Setting Method (Eliminar método set)**: quita un setter innecesario para un campo que no debe cambiar (cap10).
+- **Rename Method (Renombrar método)**: cambia el nombre de un método para que exprese mejor su propósito (cap10).
+- **Replace Conditional with Polymorphism**: elimina `switch`/`if` sobre tipos requiriendo una estructura de herencia (cap09).
+- **Replace Constructor with Factory Method**: usa un factory method cuando la creación necesita más que un constructor (cap10).
+- **Replace Error Code with Exception**: reemplaza un código de error por una excepción para errores excepcionales (cap10).
+- **Replace Inheritance with Delegation**: cambia herencia por delegación cuando la herencia modela mal (cap11).
+- **Replace Magic Number with Symbolic Constant**: reemplaza un número mágico por una constante simbólica (cap08).
+- **Replace Method with Method Object**: convierte los locales en campos de una clase nueva para descomponer un método enredado (cap06).
+- **Replace Temp with Query**: elimina un temporal sustituyéndolo por una consulta; suele ser paso previo a Extract Method (cap01, cap06).
+- **Replace Type Code with Class**: reemplaza un type code por una clase cuando es un dato puro (cap08).
+- **Replace Type Code with State/Strategy**: reemplaza un type code que afecta al comportamiento cuando el objeto es mutable o ya está subclaseado (cap08).
+- **Replace Type Code with Subclasses**: reemplaza un type code inmutable que afecta al comportamiento por subclases (cap08).
+- **Self Encapsulate Field**: accede a un campo propio a través de sus accesores en lugar de directamente (cap08).
+- **Separate Domain from Presentation (Separar dominio de presentación)**: aplica MVC separando vista y modelo y moviendo el SQL al dominio (cap12).
+- **Separate Query from Modifier (Separar consulta de modificador)**: separa los métodos que consultan estado de los que lo modifican (cap10).
+- **Shotgun Surgery (Cirugía con escopeta)**: un solo cambio obliga a tocar muchas clases; cara opuesta de divergent change (cap03).
+- **Smells (Malos olores)**: estructuras del código que sugieren la posibilidad de refactorizar y describen el *cuándo* hacerlo (cap03).
+- **Speculative Generality (Generalidad especulativa)**: mecanismos añadidos por si acaso que nadie usa (cap03).
+- **Split Temporary Variable**: divide un temporal que tiene más de una responsabilidad (cap06).
+- **Substitute Algorithm**: reemplaza un algoritmo por otro más claro, descomponiendo antes el método (cap06).
+- **Switch Statements (Sentencias switch)**: olor en que un `switch` sobre tipos suele pedir polimorfismo (cap03).
+- **Tease Apart Inheritance (Separar la herencia)**: separa una jerarquía que hace dos trabajos en dos jerarquías con delegación (cap12).
+- **Temporary Field (Campo temporal)**: campo que solo tiene valor en ciertas circunstancias (cap03).
+- **Type code**: código que representa un tipo mediante un valor, tratable con tres caminos según afecte o no al comportamiento (cap08).
+- **Unit tests**: pruebas locales por paquete que sirven a la productividad del programador (cap04).
+- **Value object**: objeto que se compara por valor y debe ser inmutable, con `equals` y `hashCode` (cap08).
