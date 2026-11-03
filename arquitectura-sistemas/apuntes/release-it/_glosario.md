@@ -1,0 +1,67 @@
+# Glosario — Release It! (2nd Edition)
+
+- **Antifrágil**: propiedad que persigue la evolución a largo plazo del sistema, combinando arquitectura evolutiva, conocimiento compartido y chaos engineering (cap00).
+- **Antipatrón**: patrón común que crea, acelera o multiplica las grietas que terminan derribando un sistema; el libro cataloga trece (cap04).
+- **API como pila de acuerdos**: una API es en realidad una pila de acuerdos en capas (handshaking, framing, codificación, sintaxis, semántica, autorización); un cambio rompedor es la ruptura unilateral de un acuerdo previo (cap14).
+- **Back Pressure**: patrón que, dentro de los límites del sistema, frena a los productores con colas finitas para gestionar la carga; es más eficiente que shed load, que queda como medida de los bordes (cap05).
+- **Bastion**: host usado para acceder por SSH a máquinas de la nube cuyas IPs son efímeras (cap07).
+- **Blast radius**: número de clientes afectados y grado de disrupción de un experimento de caos; debe limitarse eligiendo víctimas por criterios (cap17).
+- **Blocked Threads**: antipatrón considerado la causa próxima de casi todos los fallos, en el que los hilos quedan bloqueados esperando (cap04).
+- **Blue/Green Deploy**: patrón de entrega con dos pools, uno activo y otro para probar, que actúa como gobernador del ritmo de acciones peligrosas (cap13, cap16).
+- **Bulkhead**: patrón que particiona la capacidad (de thread pools a granjas de servidores) para preservar funcionalidad parcial y partir una reacción en cadena (cap05).
+- **Canary Deployment**: dar el nuevo build a un pequeño conjunto de instancias bajo escrutinio que coexisten con el build antiguo; si sus métricas van mal, no se despliega al resto (cap10, cap13).
+- **Cascading Failures**: antipatrón considerado el acelerador número uno de los fallos, en el que el fallo de un sistema se propaga a los que dependen de él (cap04).
+- **Chaos Engineering**: disciplina de experimentar sobre un sistema distribuido en producción para construir confianza en su capacidad de resistir condiciones turbulentas; es empírica, no formal (cap17).
+- **Chaos Monkey**: herramienta de Netflix que cada cierto tiempo elige un clúster de autoescalado y mata una instancia; el clúster debe recuperarse solo (cap17).
+- **Cínico (software)**: software que espera que ocurran cosas malas y se protege con barreras internas, sin confiar ni siquiera en sí mismo ni intimar demasiado con otros sistemas (cap03).
+- **Circuit Breaker**: patrón fundamental ante problemas de integration points, con estados closed/open/half-open; mide la densidad de fallas (Leaky Bucket), vive por proceso y expone sus cambios de estado (cap05).
+- **Contracción (de esquema)**: fase que elimina tablas, vistas, columnas y procedimientos en desuso y aplica restricciones NOT NULL y de clave foránea, solo tras el rollout (cap13).
+- **Control Plane**: todo el software y los servicios que corren en segundo plano para que la carga de producción tenga éxito; si gestiona otro software, es control plane (cap10).
+- **Convergencia (infraestructura)**: estilo de infraestructura con VMs longevas tratadas como "mascotas" y mapeo manual, frente a la infraestructura inmutable (cap13).
+- **Decoupling Middleware**: patrón defensivo que desacopla sistemas para amortiguar la propagación de grietas (cap04, cap05).
+- **Deployment Army (ejército de despliegue)**: antipatrón en el que el despliegue manual y ritualizado consume decenas de personas; cuanto más viejo es el software, más probable resulta (cap12).
+- **Dogpile**: antipatrón en el que un pico coordinado de peticiones concentra la carga; no suele verse en QA porque el tamaño y los datos no replican producción (cap04).
+- **Drift**: tendencia (según Sidney Dekker) de un sistema eficiente a ser empujado hacia la barrera de seguridad por la presión económica; el caos es la fuerza compensadora que prioriza la disponibilidad (cap17).
+- **Expansión (de esquema)**: fase de cambios aditivos y seguros de aplicar antes de desplegar el código (añadir tablas, columnas nullable, triggers), que la aplicación actual aún no usa (cap13).
+- **Fail Fast**: patrón que reserva recursos y valida pronto para no malgastar trabajo, distinguiendo falla de sistema de falla de aplicación; una respuesta lenta es peor que un rechazo rápido (cap05).
+- **Fault / Error / Failure**: cadena terminológica precisa; disparar una falla abre la grieta que se propaga, y un fault puede convertirse en error y luego en failure (cap03).
+- **Feature complete vs production ready**: que un sistema tenga todas las funcionalidades y tests no significa que esté listo para producción; el diseño debe atender también lo que el sistema no debe hacer (cap01).
+- **GSLB (Global Server Load Balancing)**: balanceo global vía DNS que enruta clientes entre ubicaciones geográficas buscando el punto más cercano en red, coordinado con balanceadores locales (cap09).
+- **Governor**: patrón que aplica resistencia en la dirección insegura de una automatización para dar tiempo a la intervención humana (cap05).
+- **Handshaking**: patrón que permite controlar la demanda de forma cooperativa mediante health checks entre llamador y llamado (cap05).
+- **Health check**: comprobación de salud que verifica que una petición pueda tener éxito, no solo que el socket escuche; alimenta la transparencia y la gestión de tráfico del balanceador (cap08, cap09).
+- **hostname**: nombre con dos sentidos (identidad propia del SO frente a nombre DNS externo); la relación nombre↔IP es de muchos a muchos y no tienen por qué coincidir (cap07).
+- **Infraestructura inmutable**: estilo en el que las instancias son "ganado" desechable, se parte de una imagen base y nunca se parchea en caliente; las imágenes se reconstruyen (cap08, cap13).
+- **Integration Points**: antipatrón considerado la fuente número uno de grietas; cada punto de integración con otro sistema es un riesgo de fallo (cap04).
+- **Interconnect**: capa situada entre las instancias y el control plane que reúne gestión de tráfico, balanceo de carga y descubrimiento de servicios; donde se construye la alta disponibilidad (cap09).
+- **Inyección (SQL, XXE)**: vulnerabilidad que nace de concatenar cadenas con entrada de usuario; se mitiga con placeholders y configurando los parsers de forma segura (cap11).
+- **Leaky Bucket**: mecanismo para medir la densidad de fallas usado por el Circuit Breaker (cap05).
+- **Let It Crash**: enfoque que busca estabilidad del sistema mediante reinicio rápido desde un estado bueno conocido, con granularidad acotada, supervisión y reintegración; nunca en monolitos (cap05).
+- **Load Shedding (Shed Load)**: rechazar trabajo nuevo lo más cerca del borde posible cuando la carga es excesiva, antes de provocar reintentos (cap05, cap09).
+- **Longevity testing (pruebas de longevidad)**: pruebas propias que cazan fugas de memoria y crecimiento de datos, porque QA y las pruebas de carga no corren el tiempo suficiente (cap03).
+- **Mínimo privilegio**: principio de seguridad de no ejecutar como root y restringir permisos; aplica también a imágenes de contenedor tratadas como perecederas (cap11).
+- **Multihomed**: condición de los servidores de centro de datos con varias interfaces de red; separar producción, backups y administración mejora seguridad y rendimiento (cap07).
+- **OODA / PDCA**: ciclos de decisión cuya velocidad determina la competitividad; conviene acelerar la observación y la decisión, no solo el actuar, evitando el thrashing (cap16).
+- **Pie crust (defensa de)**: modelo de seguridad perimetral que el libro recomienda abandonar: hay que autenticar en todas partes, cifrar en tránsito incluso dentro de la organización y no confiar en la IP de origen (cap11).
+- **Principio de robustez (Postel)**: "sé conservador en lo que haces y liberal en lo que aceptas"; origen de la asimetría entre peticiones y respuestas al versionar APIs (cap14).
+- **Pruebas de contrato**: pruebas que cada lado comprueba por separado (request side y response side) para mantener la compatibilidad entre proveedor y consumidor (cap14).
+- **ROC (Recovery-Oriented Computing)**: enfoque que parte de que los fallos son inevitables y busca supervivencia reiniciando componentes individuales en vez de servidores enteros (cap06).
+- **ROI del zero downtime**: ejemplo del libro en el que invertir unos 50.000 dólares en un pipeline y despliegue sin downtime evita una pérdida esperada del orden de un millón, con ROI del 2.000 por ciento (cap01, cap13).
+- **RUM (Real-User Monitoring)**: medición directa de la experiencia del usuario instrumentando apps web y móviles; responde si la experiencia es buena y si se crea el valor económico esperado (cap10).
+- **Scaling Effects**: antipatrón en el que relaciones que funcionan a pequeña escala fallan al crecer; no se ven en QA porque el tamaño no replica producción (cap04).
+- **Sesión (gestión de)**: se gestiona con IDs largos y aleatorios transportados en cookies, renovados al autenticar y protegidos frente a hijacking, fixation y prediction (cap11).
+- **Sesiones vs usuarios concurrentes**: contar usuarios concurrentes engaña, porque las sesiones duran más que los usuarios y son el talón de Aquiles del servidor de aplicaciones por su consumo de RAM, CPU y red (cap15).
+- **Service Discovery (descubrimiento de servicios)**: otro servicio que puede fallar; conviene cachear resultados, no implementarlo uno mismo y saber si la herramienta es CP (ZooKeeper) o AP (Consul) (cap09).
+- **Steady State**: patrón que elimina el "fiddling": para cada recurso que se acumula (datos, logs, caché) debe haber otro que lo recicle, permitiendo correr un ciclo de despliegue sin intervención humana (cap05).
+- **Stickiness**: política del balanceador que dirige peticiones repetidas a la misma instancia, útil para servicios con estado, a costa de desequilibrar la carga (cap09).
+- **Test Harness**: patrón que construye por cada integración un arnés que devuelve respuestas prefabricadas y emula fallas fuera de especificación que la integración normal no provoca (cap04, cap05).
+- **Timeouts**: patrón que pone límites de tiempo en llamadas salientes y en todo pool que bloquee hilos, prefiriendo reintentos diferidos a reintentos inmediatos (cap05).
+- **Transparencia**: propiedad diseñada desde el inicio que da visibilidad del interior del sistema; la monitorización es un exoesqueleto, no un tejido interno (cap08).
+- **Trickle, then batch**: enfoque preferido para migrar datos schemaless, migrando cada registro al tocarlo y luego el resto por lotes (cap13).
+- **Two-pizza team**: equipo pequeño cuya clave es reducir dependencias externas; debe ser autosuficiente y llevar las cosas hasta producción (cap16).
+- **Unbalanced Capacities**: antipatrón en el que capacidades dispares encadenadas hacen que el eslabón más pequeño derribe todo el sistema (cap04, cap06).
+- **Unbounded Result Sets**: antipatrón en el que una consulta devuelve un conjunto de resultados sin límite, no detectado en QA por el tamaño de los datos (cap04).
+- **VIP (Virtual IP)**: IP en la que escucha un balanceador activo; cada VIP mapea a uno o más pools con su algoritmo, health checks, stickiness y política de miembros (cap09).
+- **XSS**: vulnerabilidad que se previene sin confiar nunca en la entrada: sanearla al entrar y escaparla al salida (cap11).
+- **Zero downtime**: objetivo explícito del diseño para el despliegue; el "downtime planificado" es una falacia porque para el usuario el downtime es downtime (cap13).
+- **ZooKeeper / etcd**: bases de datos distribuidas para coordinar configuración, sujetas al teorema CAP; las instancias deben arrancar y seguir funcionando sin ellas (cap10).
