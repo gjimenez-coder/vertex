@@ -77,3 +77,60 @@ Los archivos con prefijo `_` y `README.md` NO son capítulos.
 - `_verificacion.md`: tabla por capítulo con hallazgos (afirmación sin respaldo, término mal escrito, sección omitida), severidad y evidencia; al final un conteo total.
 - `_conexiones.md`: por tema, los libros y capítulos relacionados, con enlaces relativos, y una frase de qué los conecta.
 - `_estudio/<libro>/capNN-estudio.md`: secciones `## Tarjetas de repaso`, `## Preguntas de autoevaluación` (con respuesta) y `## Checklist`, todo derivado del apunte.
+
+## Variante: apuntes de examen o certificación (por dominio)
+
+Se usa cuando el material combina varias fuentes (guías en PDF, slides, banco de preguntas, lecciones web) y el apunte se organiza por DOMINIO del examen, no por capítulo de un libro. Las reglas generales siguen vigentes; esta variante solo cambia la plantilla, el nombre de archivo y las citas.
+
+```
+<raiz>/apuntes/<certificacion>/
+  dominioN-titulo-kebab.md      # un apunte por dominio       (ensamblado desde _partes/)
+  _partes/dN/N.M.md             # fragmentos por tarea        (exam-note-writer, modo tarea)
+  _partes/dN/_intro.md          # 'Lo que necesitas saber'    (exam-note-writer, modo dominio)
+  _partes/dN/_ideas.md          # 'Ideas clave'               (exam-note-writer, modo dominio)
+  README.md  _glosario.md  _verificacion.md  _estudio/dominioN-estudio.md
+```
+
+Plantilla del apunte de dominio:
+
+```markdown
+# {Certificación} — {Entidad} ({guía de examen, año})
+## Dominio {N} — {Título en inglés} ({traducción al español})
+
+> Nota de extracción: fuentes usadas, tipos de cita y discrepancias entre fuentes.
+
+## Lo que necesitas saber
+(2 a 4 párrafos: de qué trata el dominio, su peso en el examen, qué sales sabiendo.)
+
+## Tarea {N.M} — {Título original} ({traducción})
+> Prioridad de estudio: … (solo si es un tema débil del usuario)
+
+### {Concepto}
+**Concepto:** nombre y explicación breve en 1-2 frases.
+
+**Ejemplos de uso (3, cortos):**
+1. …
+2. …
+3. …
+
+**Qué NO hacer:** (solo si hay riesgo de confusión)
+- …
+
+**Posible confusión con otros conceptos:** (solo si aplica)
+- {Concepto A} — ejemplo corto
+- {Concepto B} — ejemplo corto
+
+### Trampas del examen
+(distractores típicos del banco de preguntas y por qué fallan, con la cita de cada pregunta)
+
+(… una sección `## Tarea N.M` por cada tarea del dominio, en orden …)
+
+## Ideas clave
+(8 a 12 viñetas de repaso del dominio.)
+```
+
+- Sin límite de palabras: se prioriza la completitud. El validador no exige rango en estos apuntes.
+- Nombre de archivo: `dominioN-titulo-en-kebab-case.md`. Los fragmentos `_partes/` no son apuntes finales.
+- Citas (cada afirmación lleva su fuente): `(Guía PDF p. N)` y `(Slides PDF p. N)` para PDFs, donde N es el número del marcador `[[PDF p.N]]` bajo la fuente correspondiente; `(web N.M)` para las lecciones web; `(QN)` para el banco de preguntas. El material de refuerzo del usuario solo sirve para marcar prioridad de estudio y no se cita como fuente de contenido.
+- Prioridad entre fuentes: guía PDF y banco de preguntas prevalecen sobre las lecciones web (sitio de terceros). Si se contradicen, se anota la contradicción en la tarea.
+- La nota de extracción registra la discrepancia de nombre y tamaño del examen entre fuentes sin decidir cuál es la correcta.

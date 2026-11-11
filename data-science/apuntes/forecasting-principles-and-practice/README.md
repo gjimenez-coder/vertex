@@ -1,0 +1,20 @@
+# Forecasting: Principles and Practice — Rob J. Hyndman (material de taller, University of Western Australia, septiembre 2014)
+
+Taller práctico de predicción de series temporales basado en el libro de referencia Hyndman & Athanasopoulos (2013), *Forecasting: principles and practice* (OTexts.org/fpp), con datos y código en el paquete de R `fpp`. El curso enseña qué herramientas de predicción usar, cuándo usarlas y cómo aplicarlas con eficacia, partiendo de métodos benchmark sencillos y avanzando hacia descomposición, suavizado exponencial, modelos ARIMA, espacio de estados, regresión dinámica, pronóstico jerárquico, VAR, redes neuronales y estacionalidad compleja.
+
+## Capítulos
+
+- [Capítulo 1 — Introduction to forecasting (Introducción a la predicción)](cap01-introduction-to-forecasting.md): abre el taller práctico, presenta las series temporales (`ts`), los casos de estudio y los cuatro métodos simples de referencia (media, naïve, naïve estacional y drift).
+- [Capítulo 2 — The forecaster's toolbox (La caja de herramientas del analista de pronósticos)](cap02-the-forecaster-s-toolbox.md): herramientas básicas de visualización, autocorrelación (ACF), análisis de residuos, ruido blanco y medidas de precisión antes y después de modelar.
+- [Capítulo 3 — Exponential smoothing (Suavizado exponencial)](cap03-exponential-smoothing.md): familia de métodos que ponderan el pasado con pesos que decaen geométricamente, de SES a Holt-Winters, formalizados como modelos de espacio de estados ETS.
+- [Capítulo 4 — Time series decomposition (Descomposición de series temporales)](cap04-time-series-decomposition.md): descompone una serie en componentes estacional, de tendencia-ciclo y resto, con ajuste estacional y descomposición STL.
+- [Capítulo 5 — Time series cross-validation (Validación cruzada de series temporales)](cap05-time-series-cross-validation.md): evaluación honesta de modelos respetando el orden temporal mediante un rolling forecasting origin.
+- [Capítulo 6 — Making time series stationary (Cómo hacer estacionaria una serie temporal)](cap06-making-time-series-stationary.md): transformaciones (Box-Cox) y diferenciaciones ordinaria y estacional para preparar una serie para el modelado ARIMA, con pruebas de raíz unitaria y notación backshift.
+- [Capítulo 7 — Non-seasonal ARIMA models (Modelos ARIMA no estacionales)](cap07-non-seasonal-arima-models.md): combina componentes AR, diferenciación y MA en ARIMA(p,d,q), con selección por AICc y el algoritmo `auto.arima()`.
+- [Capítulo 8 — Seasonal ARIMA models (Modelos ARIMA estacionales)](cap08-seasonal-arima-models.md): extiende ARIMA con la notación ARIMA(p,d,q)(P,D,Q)ₘ para capturar patrones estacionales, con comparación frente a ETS.
+- [Capítulo 9 — State space models (Modelos de espacio de estados)](cap09-state-space-models.md): formulación general con ecuaciones de observación y de estado, el filtro de Kalman, el suavizado y los parámetros variables en el tiempo.
+- [Capítulo 10 — Dynamic regression models (Modelos de regresión dinámica)](cap10-dynamic-regression-models.md): regresión con errores ARIMA para permitir errores autocorrelacionados, tendencias estocásticas, términos de Fourier y funciones de transferencia.
+- [Capítulo 11 — Hierarchical forecasting (Pronóstico jerárquico)](cap11-hierarchical-forecasting.md): pronóstico de colecciones de series relacionadas por agregación, con reconciliación óptima (OLS/WLS) y el paquete `hts`.
+- [Capítulo 12 — Vector autoregressions (Autorregresiones vectoriales)](cap12-vector-autoregressions.md): modelos VAR que permiten retroalimentación y tratan todas las variables como endógenas, ajustados con el paquete `vars`.
+- [Capítulo 13 — Neural network models (Modelos de redes neuronales)](cap13-neural-network-models.md): redes neuronales como extensión no lineal de la regresión, con modelos NNAR y la función `nnetar()`.
+- [Capítulo 14 — Forecasting complex seasonality (Pronóstico de estacionalidad compleja)](cap14-forecasting-complex-seasonality.md): series con estacionalidad múltiple, no entera y de periodo largo mediante el modelo TBATS.

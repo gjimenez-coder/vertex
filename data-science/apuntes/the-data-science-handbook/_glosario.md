@@ -1,0 +1,86 @@
+# Glosario — The Data Science Handbook
+
+- **AGILE**: forma de organizar equipos con ciclos cortos, feedback frecuente, un producto siempre funcional y stand-ups diarios, a costa de posible technical debt (cap15).
+- **Análisis amortizado**: análisis que explica por qué añadir a un diccionario es O(1) de media pese a reorganizaciones ocasionales O(n) (cap21).
+- **Anscombe's quartet**: ejemplo que prueba que los números resumen engañan y que no hay sustituto para graficar los datos (cap05).
+- **ARIMA**: modelo de trayectorias numéricas que añade reversión a la media, con E[X] = c/(1 − φ) (cap25).
+- **Array**: bytes concatenados de elementos de tamaño fijo, por lo que acceder al elemento i-ésimo es O(1) (cap22).
+- **Bag-of-words**: representación que convierte texto en vectores numéricos y es la base del NLP práctico (cap16).
+- **Big Data**: datasets grandes y "no estructurados" junto con tecnologías de clúster; no se usa por moda si bastan una máquina y SQL (cap13).
+- **Big-O**: notación que describe cómo crece el número de pasos con el tamaño de la entrada, no cuánto tarda cada paso (cap21).
+- **Bonferroni correction**: ajuste α/n que controla el falso positivo global al probar múltiples hipótesis, aunque es conservador (cap19).
+- **Boxplot**: gráfico que muestra mediana, cuantiles y extremos, y delata outliers que un histograma disimularía (cap05).
+- **Burn-in**: primeras muestras de MCMC que se descartan para evitar el sesgo del arranque (cap24).
+- **Clustering**: vía del aprendizaje no supervisado que revela grupos dentro de los datos (cap10).
+- **Compile time**: momento de compilación, distinto del run time; detectar errores entonces es mejor que al ejecutar (cap20).
+- **Contraste de hipótesis**: técnica que calcula cuán probable es el dato bajo la hipótesis nula (p-valor) sin medir la fuerza del patrón (cap19).
+- **Correlación de residuos**: medida que, ordenando por x, detecta si la forma funcional supuesta era correcta (cercana a 0 es buena señal) (cap11).
+- **Cosine similarity**: producto escalar de vectores normalizados que compara documentos y sustenta la búsqueda (cap16).
+- **CRAP**: principios de diseño de diapositivas: contraste, repetición, alineación y proximidad (cap09).
+- **Curse of dimensionality**: fenómeno por el que en dimensiones altas los puntos quedan casi equidistantes (cap10).
+- **Data science**: trabajo analítico que exige una cantidad sustancial de habilidades de ingeniería de software (cap01).
+- **Data Science Road Map**: diagrama que encadena enmarcar el problema, entender los datos, extraer features, modelar y presentar o desplegar (cap02).
+- **Data wrangling**: preparación de datos enrevesados del mundo real, habilidad propia del científico de datos (cap02).
+- **Database**: marco para almacenar datos y acceder a ellos de forma eficiente; su ventaja sobre archivos crudos es el rendimiento (cap14).
+- **DBMS**: software que sirve una base de datos, frente a "database" que son los datos y su organización (cap14).
+- **DEFLATE**: algoritmo de compresión común a GZip y Zip (cap12).
+- **Deep learning**: redes profundas con varias capas ocultas que requieren diseñar estructura y ajustar muchos parámetros a mano (cap24).
+- **Descenso de gradiente**: optimizador que se mueve en dirección −∇f, ajustando el paso con un factor α (cap23).
+- **Descomposición estacional**: separa una serie en periodicidad, tendencia (LOESS) y ruido, exigiendo periodicidad exacta (cap17).
+- **Dropout**: técnica que reduce el overfitting poniendo valores a 0 al azar durante el entrenamiento (cap24).
+- **Dummy variables**: codificación one-hot de categorías que exige gestionar categorías raras y valores no vistos (cap07).
+- **Duck typing**: estilo del tipado dinámico de Python, flexible pero con sobrecarga (cap20).
+- **Entropía**: medida de la aleatoriedad como E[−ln(p)] que guía la elección de distribuciones de máxima ignorancia (cap18).
+- **FFT**: análisis de Fourier sobre una ventana para hallar periodicidad, extraer características y filtrar (cap17).
+- **Feature extraction**: destilar los datos a formato tabular; lo más decisivo del análisis y lo más ligado al dominio (cap02).
+- **F1**: métrica que resume el rendimiento de un clasificador binario (cap08).
+- **GMM**: modelo que añade una "zona gris" con niveles de confianza modelando cada cluster como una Gaussiana (cap10).
+- **Hadoop**: tecnología que aporta HDFS (almacenamiento distribuido) y un MapReduce ya anticuado (cap13).
+- **Heap**: zona que guarda memoria reservada dinámicamente con malloc() y liberada con free() (cap22).
+- **HMM**: modelo que infiere estados ocultos Xᵢ a partir de observaciones Yᵢ (cap25).
+- **Independencia**: condición p_xy = p_x·p_y, mucho más fuerte que una correlación cero (cap18).
+- **Inner join**: unión que descarta las filas sin coincidencia entre tablas (cap14).
+- **Is_null**: feature que captura por qué falta un dato y suele ser sorprendentemente útil (cap07).
+- **JSON**: formato jerárquico y flexible, sin punteros ni clases, que tiende a desplazar a XML (cap12).
+- **Kernel trick**: técnica k(x,y) = ϕ(x)·ϕ(y) que resuelve datos no lineales en SVM sin calcular ϕ (cap08).
+- **k-means**: algoritmo que particiona en clusters compactos y no solapados, simple pero sin garantía de optimalidad (cap10).
+- **LASSO**: regresión que penaliza pesos no nulos (parámetro alpha), combate el sobreajuste y lleva coeficientes a 0 (cap11).
+- **Least squares**: método que minimiza la suma de cuadrados de los residuos y es muy sensible a outliers (cap11).
+- **LSTM**: red recurrente que recuerda eventos lejanos mejor que una RNN básica (cap24).
+- **Machine learning**: en el fondo un subconjunto de la estadística, evolucionado aparte desde la informática (cap06).
+- **MapReduce**: modelo que mapea datos a pares clave–valor y los reduce por clave (cap13).
+- **MCMC**: método que genera muestras correlacionadas cuya distribución estacionaria es la distribución objetivo (cap24).
+- **Mediana móvil**: suavizado más robusto que la media móvil ante picos de ruido (cap17).
+- **MLE**: estimación por máxima verosimilitud que busca el θ que maximiza P(X|θ) (cap23).
+- **Naive Bayes**: clasificador que asume independencia entre características y aun así suele ser potente (cap08).
+- **NLP**: conjunto de técnicas para trabajar con lenguaje humano, como filtrar spam o medir sentimiento (cap16).
+- **NoSQL**: familia de bases de datos más flexible que SQL pero con menos potencia de procesamiento (cap14).
+- **NumPy**: librería cuyos arrays de C explican su eficiencia y que todos los elementos sean del mismo tipo (cap22).
+- **Outer join**: unión que conserva filas huérfanas rellenando con NULL, útil con una tabla primaria (cap14).
+- **Overfitting**: mayor riesgo del ML: el modelo memoriza el dato de entrenamiento y no generaliza (cap06).
+- **Pandas**: herramienta central (DataFrame y Series) sobre NumPy, con join y groupby tipo SQL (cap03).
+- **PCA**: técnica que expresa cada punto como combinación lineal de componentes principales ordenadas por varianza (cap10).
+- **Pearson**: coeficiente de correlación que asume linealidad, frente a Spearman y Kendall que solo exigen monotonicidad (cap05).
+- **Proceso de Poisson**: proceso que supone eventos independientes con tiempos entre eventos exponenciales (cap25).
+- **Propiedad de Markov**: condición por la que Xᵢ₊₁ depende solo de Xᵢ, lo que hace tratables las cadenas (cap25).
+- **Puntero**: entero que guarda una dirección del espacio de direcciones virtual (cap22).
+- **p-valor**: probabilidad del dato bajo la hipótesis nula usada en el contraste de hipótesis (cap19).
+- **QuickSort**: ordenamiento O(n²) en el peor caso pero O(n·log(n)) en promedio (cap21).
+- **Random forest**: ensemble muy preciso y robusto por la ley de los grandes números, casi imposible de interpretar (cap08).
+- **RDD**: abstracción central de Spark: conjunto inmutable y distribuido, con variantes con y sin clave (cap13).
+- **Red bayesiana**: grafo dirigido que representa dependencias entre variables y admite intuición experta (cap24).
+- **Red convolucional**: red que desliza kernels detectando patrones locales, clave para imágenes y señales 1-D (cap24).
+- **Regresión**: predicción de una salida real; ajustar curvas y la regresión de ML son matemáticamente lo mismo (cap11).
+- **Regresión logística**: clasificador que equilibra precisión e interpretabilidad vía la sigmoide (cap08).
+- **R²**: fracción de varianza explicada, 1 − (RV/TV); puede ser negativo y R² = 0 equivale a predecir la media (cap11).
+- **Seg fault**: fallo al acceder a memoria no asignada, imposible en Python (cap22).
+- **SGD**: variante que aproxima el gradiente con uno o pocos puntos, viable con datasets grandes (cap23).
+- **Spark**: tecnología que reemplazó a MapReduce por eficiencia y facilidad, con evaluación perezosa (cap13).
+- **SVM**: clasificador binario que asume separabilidad lineal y usa el kernel trick para lo no lineal (cap08).
+- **Tabla hash**: estructura que mapea claves a valores con una función hash determinista y O(1) (cap22).
+- **TDD**: práctica que escribe primero las pruebas y luego el código (cap15).
+- **TF-IDF**: ponderación que da más importancia a las palabras raras (cap16).
+- **t-test**: prueba que compara las medias de dos distribuciones normales (cap19).
+- **Unicornio**: perfil que combina modelos estadísticos, software de calidad y conexión con el negocio (cap01).
+- **Uniform(0,1)**: distribución base para simular cualquier otra vía la inversa de la CDF (cap18).
+- **Viterbi**: algoritmo que recorre un trellis capa a capa maximizando log-scores para reconstruir la secuencia óptima (cap25).

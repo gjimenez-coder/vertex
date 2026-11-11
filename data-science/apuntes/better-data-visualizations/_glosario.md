@@ -1,0 +1,97 @@
+# Glosario — Better Data Visualizations
+
+- **Arc chart**: gráfico de relación que usa arcos para conectar observaciones; el orden y la escala de los ejes cambian lo que se percibe (cap08).
+- **Área apilada (stacked area chart)**: variante del área donde el orden de apilado guía la percepción y solo la serie de la base se compara con precisión (cap05).
+- **Área (area chart)**: junto con la línea, base para mostrar cambios en el tiempo (cap05).
+- **Beeswarm**: forma de mostrar los datos uno a uno aplicando *jittering* para evitar solapamiento de puntos (cap06).
+- **Binning**: elección de intervalos (sin bins, iguales, por distribución de datos o arbitrarios) que condiciona la percepción, por ejemplo en un choropleth (cap07).
+- **Box-and-whisker plot**: gráfico que muestra percentiles concretos de una distribución; no confundir con el candlestick (cap06).
+- **Bubble plot**: gráfico de relación que añade una tercera variable escalando círculos por área, no por radio (cap08).
+- **Bullet chart**: gráfico compacto para comparar un valor con referencias, alternativa al gauge (cap04).
+- **Bump chart**: gráfico temporal que muestra cambios de rango (ranking) a lo largo del tiempo (cap05).
+- **Candlestick**: gráfico de precios financieros en el tiempo; se parece al box-and-whisker pero no visualiza distribución (cap06).
+- **Cartograma (cartogram)**: mapa que corrige la distorsión escalando la geografía al dato (contiguo, no contiguo, gráfico o en cuadrícula) a costa de familiaridad (cap07).
+- **Choropleth map (mapa coroplético)**: mapa que colorea áreas geográficas; usa paletas secuenciales, no divergentes salvo que se compare respecto a un punto medio (cap07).
+- **Chord diagram**: gráfico de relación que representa asociaciones mediante arcos y conexiones entre categorías dispuestas en círculo (cap08).
+- **Clutter (desorden)**: elementos que distraen o distorsionan (cuadrículas pesadas, marcadores, 3D); la segunda pauta es reducirlo (cap02).
+- **Codificación (encoding)**: forma visual (posición, longitud, área, color…) con que se representan los datos, ordenada por la jerarquía perceptiva (cap01).
+- **Connected scatterplot**: gráfico que conecta puntos para mostrar la evolución de dos variables en el tiempo; alternativa al doble eje (cap05).
+- **Correlación**: asociación entre variables; no implica causalidad, y el coeficiente de Pearson (ρ) va de −1 a 1 (cap08).
+- **Correlation matrix**: matriz que muestra las correlaciones entre múltiples variables (cap08).
+- **Cuarteto de Anscombe**: cuatro conjuntos (1973) con los mismos estadísticos que solo revelan sus diferencias al graficarlos (cap01).
+- **Cuatro cuadrantes**: combinaciones del cruce de los ejes forma y función que clasifican las visualizaciones (cap03).
+- **CVD (color vision deficiency)**: deficiencia de visión del color que hace fallar paletas como el arcoíris; a evitar en la guía de estilo (cap12).
+- **Cycle chart**: gráfico temporal que resalta patrones cíclicos o estacionales (cap05).
+- **Datos cualitativos**: información no numérica (entrevistas, encuestas, grupos focales) con la que construir narrativas (cap10).
+- **Datos cuantitativos**: datos numéricos, discretos o continuos, de intervalo o de razón (cap02).
+- **Datasaurus**: ejemplo que, como el cuarteto de Anscombe, demuestra que hay que visualizar los datos y no fiarse de las estadísticas resumen (cap08).
+- **Diverging bar (barras divergentes)**: barras que parten de una línea base para comparar valores en dos direcciones (cap04).
+- **Dot density map**: mapa que coloca puntos para revelar clusters mediante el principio de similitud (cap07).
+- **Dot plot**: gráfico de puntos que aligera la tinta de las barras y deja espacio para anotar, pero oculta la variación intermedia (cap04).
+- **Doble eje**: gráfico con dos ejes verticales que provoca cruces engañosos; el libro recomienda evitarlo (cap05).
+- **Error bars**: representación simple de la incertidumbre, con sesgo perceptivo "within-the-bar" (cap06).
+- **Explicativo**: función que transmite el argumento del autor (frente a exploratorio) (cap03).
+- **Exploratorio**: función que invita al usuario a hallar sus propias conclusiones (frente a explicativo) (cap03).
+- **Fan chart**: gráfico de incertidumbre donde el color indica la pérdida de confianza a medida que avanza la proyección (cap06).
+- **Flow map (mapa de flujos)**: mapa que muestra movimiento; el de Napoleón de Minard integra seis variables (cap07).
+- **Forma (form)**: eje del marco que va de estático a interactivo (cap03).
+- **Función (function)**: eje del marco que va de explicativo a exploratorio (cap03).
+- **Gantt chart**: gráfico temporal que representa duraciones de tareas o eventos (cap05).
+- **Gauge chart**: gráfico tipo indicador que falla en precisión por codificar con ángulos (cap04).
+- **Gráfico espagueti**: línea con demasiadas series enmarañadas; se resuelve con pequeños múltiples (cap02).
+- **Heatmap**: gráfico que revela patrones en datos densos o de alta frecuencia mediante color (cap04).
+- **Histograma**: gráfico base de distribución que agrupa en *bins* cuyo ancho determina cuánta forma se revela (cap06).
+- **Horizon chart**: gráfico temporal compacto que prioriza tendencias generales sobre valores exactos (cap05).
+- **Ilusión de anchura de línea**: efecto que exagera cambios bruscos; se evita graficando la diferencia directamente (cap05).
+- **Incertidumbre**: puede ser de aleatoriedad (modelable y visualizable) o de desconocimiento (no siempre resoluble con más datos) (cap06).
+- **Iconos**: lenguaje visual que categoriza y simplifica contenido cualitativo y mejora la accesibilidad (cap10).
+- **Isotype**: gráfico de unidades con iconos que aporta conexión humana pero menos precisión (cap04).
+- **Jerarquía perceptiva**: orden de las codificaciones por exactitud, con la posición en escala común arriba y área, volumen y color abajo (cap01).
+- **Line chart (gráfico de línea)**: base para mostrar cambios en el tiempo; su eje no necesita empezar en cero (cap05).
+- **Marimekko / mosaic**: gráficos que añaden una segunda variable escalando el ancho de las barras (cap04).
+- **Mediana**: medida independiente del tamaño de la población que, a diferencia de la media, no se distorsiona con valores extremos (cap06).
+- **Network diagram**: gráfico de relación clasificado por dirigido/no dirigido y ponderado/no ponderado (cap08).
+- **Nightingale chart**: gráfico que combina cambio en el tiempo y parte-todo, pero exagera los segmentos exteriores (cap09).
+- **Paired bar (barras emparejadas)**: barras que comparan dos series dentro de cada categoría (cap04).
+- **Paleta categorical**: esquema de color para distinguir categorías sin orden (cap12).
+- **Paleta diverging**: esquema de color para datos que se comparan respecto a un punto medio (cap12).
+- **Paleta sequential**: esquema de color de claro a oscuro para datos ordenados (cap12).
+- **Parallel coordinates plot**: gráfico de relación con ejes paralelos donde el orden y la escala cambian la percepción (cap08).
+- **Pearson (ρ)**: coeficiente que indica dirección y magnitud de la asociación lineal, de −1 a 1 (cap08).
+- **Percent change / percentage point change**: cambios distintos que se confunden a menudo (cap04).
+- **Percentil**: medida independiente del tamaño de la población y comparable entre grupos (cap06).
+- **Pie chart (gráfico de tarta)**: familiar pero poco preciso para comparar porciones; cae por debajo de la mitad del ranking perceptivo (cap09).
+- **Pequeños múltiples (small multiples)**: conjunto de gráficos con misma escala y orden lógico que rompe el gráfico espagueti (cap02).
+- **Principios Gestalt**: proximidad, similitud, cierre perimetral, clausura, continuidad y conexión; explican cómo agrupamos elementos visuales (cap01).
+- **Procesamiento preatentivo**: uso de color, peso, posición o longitud para dirigir la atención sin esfuerzo consciente (cap01).
+- **Proportional symbol map**: mapa que codifica datos con el tamaño de símbolos superpuestos (cap07).
+- **Proyección**: transformación del globo al plano; toda proyección distorsiona (Mercator infla las latitudes altas) (cap07).
+- **Pyramid chart**: gráfico de distribución que enfrenta dos poblaciones (p. ej. por edad y sexo) (cap06).
+- **Radar chart**: gráfico de relación radial donde el orden y la escala de los ejes cambian lo percibido (cap08).
+- **Raincloud**: combinación que muestra los datos uno a uno junto con su distribución (cap06).
+- **Ridgeline plot**: gráfico que muestra varias distribuciones solapadas basadas en kernel density (cap06).
+- **Sankey**: diagrama que ofrece vistas compactas de flujos entre categorías (cap04).
+- **Scatterplot (gráfico de dispersión)**: el gráfico de relación más familiar entre dos variables (cap08).
+- **Sección 508**: normativa de accesibilidad considerada en la guía de estilo, junto con las cuatro áreas WCAG (cap12).
+- **Slope chart (gráfico de pendiente)**: gráfico temporal que compara dos momentos mediante la pendiente de la línea (cap05).
+- **Sparklines**: minigráficos de línea sin ejes que priorizan la tendencia sobre el valor exacto (cap05).
+- **Spanner**: encabezado que agrupa varias columnas en una tabla (cap11).
+- **Start with gray (empieza con gris)**: quinta pauta que obliga a elegir color y énfasis de forma deliberada (cap02).
+- **Stacked bar (barras apiladas)**: barras que comparan dentro y entre categorías, con el reto del clutter y la línea base (cap04).
+- **Streamgraph**: gráfico temporal de forma orgánica útil para series volátiles (cap05).
+- **Strip plot**: gráfico que muestra los datos uno a uno a lo largo de un eje (cap06).
+- **Sunburst diagram**: gráfico parte-todo que muestra varios niveles jerárquicos por anillos (cap09).
+- **Tabla**: visualización ideal para valores exactos y localizar cifras, propensa al desorden (cap11).
+- **Tile grid map**: cartograma en cuadrícula que iguala tamaños y admite minigráficos (cap07).
+- **Timeline (línea de tiempo)**: representación temporal con infinitas variantes de detalle y diseño (cap05).
+- **Treemap**: pie chart "cuadrado", compacto, que admite jerarquías, color y más anotación (cap09).
+- **Tree diagram**: gráfico de relación que representa estructuras jerárquicas (cap08).
+- **Unit chart**: gráfico que representa valores mediante unidades repetidas, con conexión humana pero menos precisión (cap04).
+- **Violin chart**: gráfico que muestra toda la distribución basada en kernel density (cap06).
+- **Voronoi diagram**: división de un espacio en polígonos según el *site* más cercano; usado en el mapa del cólera de John Snow (cap09).
+- **Waffle chart**: gráfico de unidades en cuadrícula que escala por área, no por diámetro (cap04).
+- **Waterfall**: gráfico que descompone un valor en incrementos y decrementos sucesivos (cap04).
+- **WCAG**: cuatro áreas de pautas de accesibilidad consideradas en la guía de estilo (cap12).
+- **Word cloud (nube de palabras)**: representación cuantitativa de frecuencia con problemas perceptivos; un bar chart suele leerse mejor (cap10).
+- **Word tree (árbol de palabras)**: visualización (Wattenberg y Viégas, 2007) que muestra los contextos de cada palabra, dimensionada por frecuencia (cap10).
+- **Xenographics**: repositorio de gráficos experimentales de Maarten Lambrechts citado como fuente de inspiración (cap14).

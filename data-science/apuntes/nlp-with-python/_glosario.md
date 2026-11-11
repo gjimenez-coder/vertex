@@ -1,0 +1,76 @@
+# Glosario — Natural Language Processing with Python
+
+- **Árbol de decisión**: clasificador interpretable que maneja mal la interacción de rasgos y los predictores débiles; se construye guiado por la ganancia de información (cap06).
+- **Backoff**: estrategia que combina taggers (default, regexp, unigrama, n-grama) para equilibrar precisión y cobertura (cap05).
+- **β-reducción**: operación del cálculo λ que corresponde a aplicar una función a un argumento, con α-conversión para evitar la captura de variables (cap10).
+- **Brill tagging**: etiquetado por transformación (transformation-based learning) que corrige un etiquetado inicial con reglas interpretables y modelos pequeños (cap05).
+- **Cadena**: secuencia inmutable que se indexa y corta desde cero (índices negativos desde el final) y procesa texto en el nivel más bajo (cap03, cap04).
+- **Cálculo λ**: formalismo añadido a la lógica para construir el significado de forma composicional (cap10).
+- **Chart parsing**: análisis con WFST que usa programación dinámica para reutilizar constituyentes ya hallados (cap08).
+- **Chinking**: definición de lo que se excluye de un chunk (cap07).
+- **Chunking**: segmentación y etiquetado de secuencias de varios tokens no solapadas, usando las etiquetas POS como rasgo principal (cap07).
+- **Clasificación supervisada**: esquema que encadena extractor de rasgos, algoritmo de aprendizaje y modelo para elegir la etiqueta correcta de una entrada (cap06).
+- **Collocations**: pares de palabras que aparecen juntas con más frecuencia de lo esperado y resumen estilo y contenido (cap01).
+- **Comprensión de listas**: construcción `[f(x) for x in text]` que aplica una operación a cada elemento de una secuencia (cap01, cap04).
+- **ConditionalFreqDist**: distribución de frecuencia condicional, colección de distribuciones de frecuencia una por condición, útil para comparar géneros y generar texto (cap02).
+- **Constituyente**: parte de una oración identificada por sustituibilidad dentro de la estructura sintáctica (cap08).
+- **Corpus**: colección grande y estructurada de textos; NLTK incluye varios como Brown, Gutenberg o Reuters (cap02).
+- **CFG (gramática libre de contexto)**: notación que analiza un sintagma de categoría A en partes menores mediante producciones, con un símbolo inicial S (cap08).
+- **Descenso recursivo**: parsing top-down que no admite recursión por la izquierda y repite trabajo (cap08).
+- **Diversidad léxica**: cociente entre tipos y tokens que mide la variedad del vocabulario de un texto (cap01).
+- **DRT**: teoría de la representación del discurso que extiende la semántica más allá de la oración con referentes del discurso, condiciones y resolución anafórica (cap10).
+- **ElementTree**: componente que permite acceder a datos en XML y Toolbox (cap11).
+- **Encoding**: conversión de Unicode a bytes; el inverso (bytes a Unicode) es el decoding (cap03).
+- **Expresión generadora**: construcción con `yield` que procesa datos en flujo y ahorra memoria (cap04).
+- **Expresión regular**: patrón prefijado con `r'...'` con metacaracteres (`.`, `^`, `$`, `*`, `+`, `[]`, etc.) para comprobar, extraer o dividir texto (cap03).
+- **F-Measure**: métrica de evaluación en búsqueda que combina precisión y exhaustividad (cap06).
+- **FreqDist**: distribución de frecuencia que, junto con bigramas y colocaciones, resume el estilo y contenido de un texto (cap01).
+- **Ganancia de información**: medida basada en la entropía que guía la construcción de un árbol de decisión (cap06).
+- **Gazetteer**: lista de referencia para buscar entidades en NER, que falla por cobertura y ambigüedad (cap07).
+- **Gold standard**: conjunto de referencia contra el que se evalúa un tagger o clasificador (cap05).
+- **Gramática de dependencias**: gramática que expresa funciones gramaticales entre núcleo y dependientes, con la valencia determinando los complementos (cap08).
+- **Hapax**: palabra que aparece una sola vez y, como las muy frecuentes, informa poco sobre el texto (cap01).
+- **Hiperónimo**: en WordNet, término más general que otro; su relación inversa es el hipónimo (cap02).
+- **Information Extraction**: conversión de texto no estructurado en tuplas (entidad, relación, entidad) que pueblan bases de datos consultables (cap07).
+- **IOB**: etiquetas B/I/O para representar chunks, intercambiables con árboles en NLTK (cap07).
+- **`is` frente a `==`**: `is` comprueba la identidad de objeto y `==` la equivalencia de valor, reflejando la distinción tipo-token (cap04).
+- **Kappa**: coeficiente que mide la concordancia inter-anotadores corrigiendo el azar (cap11).
+- **Left-corner**: parsing que combina top-down con filtrado bottom-up (cap08).
+- **Lematización**: normalización que reduce una palabra a su lema solo si la forma está en el diccionario (WordNet) (cap03).
+- **Lógica de primer orden**: lenguaje que añade a la proposicional predicados, argumentos, variables y cuantificadores (`exists`, `all`) para representar significado (cap10).
+- **Lógica proposicional**: lógica que solo captura conectores oracionales (cap10).
+- **Máxima entropía**: clasificador que usa optimización iterativa para hallar pesos que maximizan la verosimilitud eligiendo la distribución de mayor entropía (cap06).
+- **Merónimo**: en WordNet, relación parte-todo; su inversa es el holónimo (cap02).
+- **Modelo ⟨D, Val⟩**: formalización de una situación mediante conjuntos, usada para evaluar la verdad de oraciones (cap10).
+- **Naive Bayes**: clasificador generativo (P(input, label)) donde cada rasgo contribuye independientemente combinando prior y P(f|label); requiere suavizado (cap06).
+- **NER (Named Entity Recognition)**: identificación de los límites y el tipo de entidades (ORGANIZATION, PERSON, LOCATION, DATE...) (cap07).
+- **Normalización**: proceso que incluye pasar a minúsculas, stemming y lematización (cap03).
+- **OLAC**: marco sobre Dublin Core y OAI para documentar y descubrir recursos lingüísticos (cap11).
+- **Overfitting**: sobreajuste provocado por demasiados rasgos, sobre todo con corpus pequeños (cap06).
+- **PCFG**: gramática libre de contexto probabilística que asigna probabilidades a los análisis para elegir el más probable (cap08).
+- **POS tagging**: etiquetado gramatical que clasifica cada palabra según su clase léxica y le asigna una etiqueta como `NN` o `VB` (cap05).
+- **Programación dinámica**: técnica que almacena resultados de subproblemas solapados para evitar recomputarlos (cap04, cap08).
+- **Punkt**: segmentador de oraciones (cap03).
+- **Reentrancia**: situación en que dos rasgos comparten un mismo valor, marcada con índices numéricos en las AVM (cap09).
+- **Relation Extraction**: extracción de relaciones entre entidades mediante patrones (reglas) o aprendizaje automático (cap07).
+- **Round-tripping**: conversión de formatos que a veces implica pérdida de información (cap11).
+- **Shift-reduce**: parsing bottom-up que no garantiza hallar el análisis ni hacerlo de forma globalmente consistente (cap08).
+- **Slash category**: recurso basado en rasgos para modelar dependencias no acotadas (cap09).
+- **Standoff**: anotación en ficheros aparte con punteros e identificadores, clave para la curación distribuida; se opone a la anotación inline (cap11).
+- **Stemming**: normalización que recorta una palabra a su raíz con algoritmos como Porter o Lancaster (cap03).
+- **Stopwords**: palabras vacías recogidas en listas entre los recursos léxicos (cap02).
+- **Subsunción**: orden parcial entre estructuras de rasgos; FS0 subsume a FS1 cuando es más general (cap09).
+- **Synset**: en WordNet, conjunto de sinónimos organizado en una red de relaciones (cap02).
+- **Tag pattern**: patrón de etiquetas POS como `<DT>?<JJ>*<NN>` usado en chunking (cap07).
+- **Tagset**: conjunto de etiquetas usado en una tarea de etiquetado; no existe uno único "correcto" (cap05).
+- **Tipo**: forma única de una palabra, frente al token; `len(set(text))` cuenta tipos (cap01).
+- **Token**: aparición concreta de una palabra en un texto; `len(text)` cuenta tokens (cap01).
+- **Token etiquetado**: en NLTK, tupla `(palabra, tag)` (cap05).
+- **Tokenización**: segmentación del texto en tokens, insuficiente si se divide solo por espacios (cap03).
+- **Unicode**: representación de texto mediante code points (`\uXXXX`), gestionada con el módulo `codecs` (cap03).
+- **Unificación**: operación que combina la información de dos estructuras de rasgos si tienen éxito (cap09).
+- **Valencia**: propiedad que determina qué complementos admite cada verbo en la gramática de dependencias (cap08).
+- **Validación cruzada**: técnica de evaluación que aporta fiabilidad a las métricas de un clasificador (cap06).
+- **windowdiff**: medida de concordancia entre segmentaciones (cap11).
+- **WordNet**: recurso que organiza synsets en una red de relaciones (hiperónimos, merónimos, antónimos) y permite estimar similitud semántica (cap02).
+- **XML**: formato flexible que no resuelve por sí solo el modelado de datos lingüísticos (cap11).

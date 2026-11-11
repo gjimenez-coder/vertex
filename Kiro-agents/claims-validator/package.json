@@ -1,0 +1,18 @@
+{
+  "name": "claims-validator",
+  "version": "0.1.0",
+  "description": "Validador de reclamos retail (demo de prácticas spec->build de Kiro)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "claims-validator": "src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "demo": "node src/cli.js --demo",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

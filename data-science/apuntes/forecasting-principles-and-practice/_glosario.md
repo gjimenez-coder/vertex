@@ -1,0 +1,71 @@
+# Glosario — Forecasting: Principles and Practice
+
+- **ACF (correlograma)**: resumen de las autocorrelaciones de una serie; un decaimiento lento indica tendencia y los picos en los lags estacionales indican estacionalidad (cap02).
+- **AICc**: criterio de información preferido para la selección de órdenes y modelos ARIMA (cap07).
+- **ADF (prueba)**: prueba de raíz unitaria cuya hipótesis nula es que la serie no es estacionaria (cap06).
+- **AR (modelo autorregresivo)**: componente que modela la serie a partir de sus propios rezagos; su orden es `p` (cap07).
+- **ARIMA(p,d,q)**: modelo que combina componentes autorregresivos (`p`), diferenciación (`d`) y de medias móviles (`q`) para series no estacionales (cap07).
+- **ARIMA(p,d,q)(P,D,Q)ₘ**: notación de ARIMA estacional que separa la parte no estacional de la estacional, con `m` periodos por estación (cap08).
+- **auto.arima()**: función de R que automatiza la elección de `d`, `p` y `q` mediante tests de raíz unitaria y búsqueda stepwise (cap07).
+- **Autocorrelación**: correlación de una serie con sus propios valores rezagados, resumida en la ACF (cap02).
+- **Backshift (operador B)**: operador de retardo que expresa las diferencias como $(1-B)^d$ y $(1-B^m)$; $(1-B)^2 \neq 1-B^2$ (cap06).
+- **Bottom-up**: método jerárquico que pronostica el nivel inferior y agrega; usa `P = [0|I]` y es insesgado (cap11).
+- **Box-Cox (transformación)**: transformación que unifica raíz, log y potencias vía $\lambda$; $\lambda=0$ es el log y fuerza pronósticos positivos (cap06).
+- **BSM**: modelo estructural básico, uno de los modelos estructurales simples casi equivalentes a los ETS aditivos (cap09).
+- **Ciclo**: patrón de longitud variable e impredecible a largo plazo, distinto de la estacionalidad (cap02).
+- **Damped (tendencia amortiguada)**: variante con 0 < φ < 1 que da tendencia a corto plazo y un largo plazo constante, más conservador (cap03).
+- **Descomposición aditiva**: expresión de la serie como `Yt = St + Tt + Et` (cap04).
+- **Desestacionalizar**: obtener los datos sin componente estacional mediante `Yt − St = Tt + Et` (cap04).
+- **Diferenciación estacional**: diferencia `y_t - y_{t-m}`, preferible a la ordinaria cuando la estacionalidad es fuerte (cap06).
+- **Diferenciación ordinaria**: primera diferencia `y_t - y_{t-1}` que da el modelo de camino aleatorio y estabiliza la media (cap06).
+- **Drift (método)**: método benchmark que extrapola la recta que une la primera y la última observación (cap01).
+- **Endógena**: en un VAR, condición de todas las variables al tratarse de forma simétrica con retroalimentación (cap12).
+- **Estacionariedad**: propiedad de una serie horizontal, con varianza constante y sin patrones predecibles a largo plazo; requisito de ARIMA (cap06).
+- **ETS(Error, Trend, Seasonal)**: formulación en espacio de estados de los métodos de suavizado exponencial; 30 modelos al distinguir error aditivo y multiplicativo (cap03).
+- **ets()**: función de R que selecciona y ajusta automáticamente el modelo de suavizado exponencial (cap03).
+- **Filtro de Kalman**: algoritmo que, en tres pasos, da estimaciones óptimas en MSE, predicciones y verosimilitud para cualquier modelo en espacio de estados (cap09).
+- **forecast()**: función de R que genera pronósticos e intervalos a partir de un modelo ajustado (cap03).
+- **Función de transferencia**: `ν(B)` que modela efectos rezagados de `x` sobre `y` sin retroalimentación de `y` hacia `x` (cap10).
+- **Grouped time series (serie agrupada)**: colección de series que se agregan de varias formas cruzadas no jerárquicas (cap11).
+- **Hierarchical time series (serie jerárquica)**: colección de series enlazadas en una jerarquía con niveles anidados (cap11).
+- **Holt (método)**: método de suavizado exponencial que añade tendencia a SES (cap03).
+- **Holt-Winters**: método de suavizado exponencial que añade estacionalidad, con variantes aditiva y multiplicativa (cap03).
+- **hts (paquete)**: paquete de R que implementa los métodos de pronóstico jerárquico y agrupado (cap11).
+- **Invertibilidad**: condición de los modelos MA que exige que las raíces del polinomio queden fuera del círculo unitario (cap07).
+- **KPSS (prueba)**: prueba de raíz unitaria cuya hipótesis nula es que la serie es estacionaria (cap06).
+- **Ljung-Box (test)**: test de portmanteau para comprobar si los residuos son ruido blanco, preferible en muestras pequeñas (cap02).
+- **MA (medias móviles)**: componente que modela la serie a partir de errores pasados; su orden es `q` (cap07).
+- **MAE**: medida de error dependiente de la escala usada para comparar modelos por horizonte (cap02).
+- **MAPE**: medida de error porcentual que requiere valores positivos (cap02).
+- **MASE**: medida de error comparable entre series (cap02).
+- **MLE**: estimación por máxima verosimilitud de parámetros y estados iniciales minimizando L* (cap03).
+- **Naïve (método)**: método benchmark que pronostica el último valor observado (cap01).
+- **Naïve estacional**: método benchmark que pronostica el último valor de la misma estación (cap01).
+- **ndiffs / nsdiffs**: funciones de R que determinan el orden de diferenciación ordinaria y estacional (cap06).
+- **NNAR(p,k)**: red neuronal autorregresiva con `p` rezagos de entrada y `k` nodos ocultos; NNAR(p,0) equivale a ARIMA(p,0,0) sin restricciones (cap13).
+- **nnetar()**: función de R que selecciona automáticamente `p`, `P` y `k` usando el AIC y datos desestacionalizados (cap13).
+- **OLS (reconciliación)**: reconciliación óptima simple e insesgada que usa `S(S′S)⁻¹S′` pero ignora las covarianzas (cap11).
+- **PACF (autocorrelación parcial)**: función que, junto con la ACF de los datos diferenciados, orienta la elección de modelos AR(p) o MA(q) (cap07).
+- **Portmanteau (tests)**: pruebas (Box-Pierce y Ljung-Box) que comprueban en bloque si los residuos son ruido blanco (cap02).
+- **Random walk (camino aleatorio)**: modelo ARIMA(0,1,0), con o sin deriva, resultado de la primera diferencia (cap07).
+- **Reconciliación óptima**: enfoque que pronostica cada serie por separado y luego ajusta los pronósticos a la estructura de agregación (cap11).
+- **Regresión con errores ARIMA**: modelo que combina regresión con una parte ARIMA para los errores autocorrelacionados, evitando la regresión espuria (cap10).
+- **Regresión espuria**: relación falsa que surge al minimizar ∑nt² con variables no estacionarias (cap10).
+- **Residuos de pronóstico**: diferencias que deben estar no correlacionadas y con media cero; idealmente con varianza constante y normalidad (cap02).
+- **RMSE**: medida de error dependiente de la escala; la versión a un paso fuera de muestra suele superar la del entrenamiento (cap05).
+- **Rolling forecasting origin**: desplazamiento hacia adelante del origen del pronóstico en la validación cruzada de series temporales (cap05).
+- **Ruido blanco**: serie sin patrones; el 95% de sus autocorrelaciones cae dentro de ±1.96/√T (cap02).
+- **SES (suavizado exponencial simple)**: método sin tendencia ni estacionalidad que da pronósticos planos (cap03).
+- **STL**: descomposición "Seasonal and Trend decomposition using Loess", robusta a outliers y con estacionalidad cambiante; solo aditiva (cap04).
+- **Summing matrix (S)**: matriz que resume la estructura de agregación en `Yt = S Bt` (cap11).
+- **Suavizado de Kalman**: procedimiento (`tsSmooth`) que usa todos los datos para estimar estados pasados, útil en imputación y ajuste estacional (cap09).
+- **Suavizado exponencial**: familia de métodos que ponderan el pasado con pesos que decaen geométricamente; α controla el decaimiento (cap03).
+- **TBATS**: modelo que integra términos Trigonométricos, transformación Box-Cox, errores ARMA, Tendencia y estacionalidad múltiple/no entera (cap14).
+- **Tendencia estocástica**: tendencia que produce intervalos de pronóstico más anchos que una determinista (cap10).
+- **Términos de Fourier**: armónicos que capturan estacionalidad periódica, con `K` elegido minimizando el AICc (cap10).
+- **Top-down**: método jerárquico que desagrega el total con proporciones que suman uno; usa `P = [p|0]` y no es insesgado (cap11).
+- **ts (clase)**: clase de R para datos de series temporales que indica frecuencia e inicio (cap01).
+- **VAR (autorregresión vectorial)**: modelo que describe cada variable con los rezagos de todas las variables del sistema, permitiendo retroalimentación (cap12).
+- **vars (paquete)**: paquete de R que ajusta y diagnostica modelos VAR con `VARselect`, `VAR`, `serial.test` y `forecast` (cap12).
+- **Validación cruzada de series temporales**: evaluación que respeta el orden temporal entrenando con el pasado y evaluando sobre el futuro (cap05).
+- **WLS (reconciliación)**: reconciliación óptima que pondera por la inversa de las varianzas, poniendo peso donde los pronósticos son mejores (cap11).

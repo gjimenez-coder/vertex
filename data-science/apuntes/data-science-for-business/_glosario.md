@@ -1,0 +1,76 @@
+# Glosario — Data Science for Business
+
+- **Árbol de clasificación (classification tree)**: segmentación supervisada multivariada construida por tree induction; equivale a un conjunto de reglas IF...AND...THEN, una por cada camino raíz-hoja (cap03).
+- **Asociaciones (associations)**: tarea que busca ítems que van juntos; su interés se mide con support, strength = p(B|A), lift y leverage (cap12).
+- **Atributo informativo**: variable que reduce la incertidumbre sobre el target; tener un target convierte su búsqueda en encontrar variables correlacionadas con él (cap03).
+- **AUC (área bajo la curva ROC)**: resume la curva ROC en un número de 0 a 1 (0,5 = azar) y equivale a la probabilidad de rankear un positivo por delante de un negativo (cap08).
+- **Bag of words**: representación de texto que trata cada palabra como característica independiente, ignorando orden y gramática; simple, barata y eficaz (cap10).
+- **Baseline**: línea base simple pero no simplista (clasificador mayoritario, decision stump, reglas del dominio) contra la cual comparar un modelo (cap07).
+- **Big Data**: tecnologías que dan soporte a la data science, pero que no son data science en sí; el libro vislumbra un salto de Big Data 1.0 a 2.0 (cap01).
+- **Clasificación**: tarea supervisada cuyo objetivo es categórico (cap02).
+- **Clustering**: segmentación no supervisada que agrupa objetos por similitud; incluye clustering jerárquico y k-means (cap06).
+- **Clustering jerárquico**: produce un dendrograma recortable que permite elegir el número de clústeres (cap06).
+- **Corrección de Laplace**: estimación p(c)=(n+1)/(n+m+2) que modera las hojas con pocas instancias y mitiga el overfitting en probability estimation trees (cap03).
+- **Coseno (cosine similarity)**: medida de similitud entre documentos sobre vectores TFIDF que permite recuperación por vecino más cercano (cap10).
+- **CRISP-DM**: proceso de minería de datos de seis fases que iteran; la iteración es la norma, no un fracaso (cap02).
+- **Cumulative response curve**: visualización intuitiva para negocio que asume que el test conserva los priors reales y es sensible al down-sampling (cap08).
+- **Data mining**: extracción de conocimiento de los datos mediante tecnologías que encarnan los principios de la data science (cap01).
+- **Data science**: conjunto de principios que guían la extracción de conocimiento a partir de datos (cap01).
+- **Descomposición sesgo-varianza**: el error se descompone en aleatoriedad inherente (tasa de Bayes), sesgo y varianza, con un trade-off que el control de complejidad equilibra (cap12).
+- **Discriminante lineal**: clasificador según el signo de una suma ponderada de atributos f(x)=w0+w1x1+...; recta en 2D, plano en 3D, hiperplano en más (cap04).
+- **Distancia Euclídea (norma L2)**: medida de distancia más común en el espacio de características; existen alternativas como Manhattan, Jaccard, coseno y edición (cap06).
+- **Ensemble**: método que reduce error combinando modelos cuyos errores son distintos; útil con métodos de alta varianza como los árboles (random forests, bagging, boosting) (cap12).
+- **Entropía**: mide el desorden o impureza de un conjunto; va de 0 (puro) a 1 (clases balanceadas en el caso de dos clases) (cap03).
+- **Exactitud (accuracy)**: métrica simplista que falla con clases desbalanceadas y trata todos los errores por igual (cap07).
+- **Fitting graph**: gráfico que compara precisión de entrenamiento y de reserva frente a la complejidad; la curva de reserva suele tener un "sweet spot" (cap05).
+- **Fuga (leak)**: variable usada en la preparación de datos que no estará disponible en el momento de decidir (cap02).
+- **GMM (Gaussian Mixture Model)**: ajuste de varias gaussianas que produce un clustering "suave" con pertenencia probabilística (cap12).
+- **Generalización**: predecir bien sobre instancias no observadas, en contraste con el sobreajuste (cap05).
+- **Hinge loss**: loss function que penaliza los puntos del lado equivocado proporcionalmente a su distancia; usada por el SVM (cap04).
+- **Homofilia social**: tendencia que puede inflar enormemente la influencia estimada en marketing viral al hacer explicación causal (cap12).
+- **Humano en el bucle**: las personas eligen datos, objetivos y proxies y validan con conocimiento de dominio; los datos no son verdad objetiva (cap14).
+- **Independencia condicional**: suposición de Naive Bayes que reduce p(E|c) a un producto de p(ei|c) calculables por conteo (cap09).
+- **Information gain**: mide cuánto reduce la entropía un atributo al segmentar, ponderando cada hijo por su tamaño; para regresión se usa reducción de varianza (cap03).
+- **Ingeniería analítica**: diseño de la solución a partir de datos, herramientas y técnicas, descomponiendo un problema de negocio en subproblemas tratables (cap11).
+- **k-means**: clustering en torno a centroides que requiere fijar k, se repite por caer en óptimos locales y se evalúa con la distorsión (cap06).
+- **k-NN (vecinos más cercanos)**: método de lazy learning que predice clasificación, regresión o probabilidad combinando los vecinos; k es su parámetro de complejidad (cap06).
+- **Learning curve**: muestra el rendimiento de generalización frente a la cantidad de datos; orienta si invertir en más datos o mejores features (cap05).
+- **Leverage**: diferencia respecto a la independencia que mide cuán interesante es una co-ocurrencia (cap12).
+- **Lift**: cociente de una co-ocurrencia frente a lo esperado bajo independencia; también p(x|c)/p(x) como lift de una pieza de evidencia (cap09, cap12).
+- **Lift curve**: visualización intuitiva para negocio que asume que el test conserva los priors reales (cap08).
+- **Loss function**: función que penaliza los errores del modelo (squared error, hinge loss, zero-one loss) (cap04).
+- **Maldición de la dimensionalidad**: limitación de k-NN mitigada con selección de características y pesos (cap06).
+- **Matriz de confusión**: descompone aciertos y errores (TP, FP, FN, TN) y es la base de casi todas las métricas (cap07).
+- **Matrix factorization**: técnica de reducción de datos usada en la recomendación de películas (Netflix) mediante dimensiones latentes (cap12).
+- **Maximum likelihood**: criterio de ajuste de la regresión logística y base del profiling como ajuste de una gaussiana (cap04, cap12).
+- **Métodos discriminativos**: modelan la frontera de decisión (árboles, ecuaciones lineales), frente a los generativos (cap09).
+- **Métodos generativos**: modelan cómo cada clase genera las features; Naive Bayes es su ejemplo base (cap09).
+- **Modelado paramétrico (parameter learning)**: fija la estructura del modelo y deja que los datos determinen los parámetros; alternativa a la inducción de árboles (cap04).
+- **Naive Bayes**: clasificador que aplica la Regla de Bayes con independencia condicional; eficiente, incremental y baseline habitual (cap09).
+- **n-gramas**: secuencias de palabras que preservan el orden pero inflan el número de características (cap10).
+- **Overfitting (sobreajuste)**: ajustar el modelo a los datos de entrenamiento a costa de la generalización; en el fondo, un problema de comparaciones múltiples (cap05).
+- **Predicción de enlaces (link prediction)**: tarea encuadrada como similitud entre personas o como modelado predictivo sobre pares de personas (cap12).
+- **Probabilidad conjunta**: p(AB)=p(A)·p(B|A); solo bajo independencia se reduce a p(A)·p(B) (cap09).
+- **Probability estimation tree**: árbol que estima p(c)=n/(n+m) por hoja, moderable con la corrección de Laplace (cap03).
+- **Profit curve**: visualización útil cuando priors, costes y beneficios se conocen y son estables; una restricción de presupuesto cambia el punto de operación (cap08).
+- **Profiling (perfilado)**: caracteriza el comportamiento típico, a menudo como un ajuste de modelo (media/desviación bajo una gaussiana) (cap12).
+- **Regla de Bayes**: p(H|E)=p(E|H)·p(H)/p(E); convierte una cantidad difícil en tres fáciles de estimar (cap09).
+- **Regresión**: tarea supervisada cuyo objetivo es numérico (cap02).
+- **Regresión logística**: modela las log-odds con f(x) y las convierte en probabilidad vía la función logística; pese a su nombre, estima probabilidad de clase (cap04).
+- **Regularización**: optimiza ajuste más simpleza con una penalización ponderada por λ; L2 da ridge y L1 da lasso (cap05).
+- **Representation engineering**: etapa de preparar la representación de los datos; suele ser más simple adaptar los datos a las herramientas que al revés (cap10).
+- **ROC graph**: gráfico de fp rate (x) vs tp rate (y) que desacopla el rendimiento de priors y costes; mejor hacia el noroeste (cap08).
+- **Segmentación supervisada**: dividir la población en grupos que difieren respecto a un target que se quiere predecir (cap03).
+- **Sesgo de selección**: ocurre cuando los datos no son una muestra aleatoria de la población objetivo; importa si afecta a la variable objetivo (cap11).
+- **Similarity matching**: búsqueda de entidades parecidas a partir de la distancia en el espacio de características (cap06).
+- **Stemming**: paso de preprocesamiento de texto que reduce las palabras a su raíz (cap10).
+- **Stopwords**: palabras eliminadas en el preprocesamiento de texto, con cuidado porque en títulos pueden importar (cap10).
+- **Support**: prevalencia conjunta de los ítems en una asociación (cap12).
+- **SVM (support-vector machine)**: modelo lineal que maximiza el margen entre clases y penaliza con hinge loss los puntos del lado equivocado (cap04).
+- **Target (objetivo)**: cantidad de interés que se quiere predecir o estimar en un problema supervisado (cap03).
+- **TFIDF**: TF × IDF; pondera cada término por su frecuencia en el documento y su rareza en el corpus; representación de texto más común (cap10).
+- **Toma de decisiones basada en datos (DDD)**: uso de datos para decidir que mejora de forma demostrable y a veces causal la productividad y el valor de la empresa (cap01).
+- **Topic models**: técnica de texto que introduce una capa latente de temas entre las palabras y el modelo (cap10).
+- **Tree induction**: proceso recursivo de divide-and-conquer que elige en cada paso el atributo que da los subgrupos más puros (cap03).
+- **Validación cruzada (cross-validation)**: divide el dataset en k folds y produce media y varianza del rendimiento, aprovechando mejor datos limitados (cap05).
+- **Valor esperado (expected value)**: marco organizador que combina probabilidades de los datos con costes-beneficios del negocio, sumados sobre la matriz de confusión (cap07).

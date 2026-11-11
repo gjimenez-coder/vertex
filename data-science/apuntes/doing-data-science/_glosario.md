@@ -1,0 +1,80 @@
+# Glosario — Doing Data Science
+
+- **A/B testing**: experimento aleatorizado en software que conecta la métrica optimizada por el modelo con el objetivo real del negocio; fácil de montar en teoría, difícil de hacer bien (cap05, cap11).
+- **ALS (mínimos cuadrados alternados)**: método que resuelve las matrices U y V de forma iterativa, con solución cerrada d×d por usuario/ítem y fácilmente paralelizable (cap08).
+- **Ambient analytics**: visualización embebida en productos y procesos (information radiators) para aumentar la inteligencia del equipo y medir el negocio, como en Square (cap09).
+- **Análisis exploratorio de datos (EDA)**: conjunto de herramientas y actitud (Tukey, Bell Labs) para ganar intuición, hacer sanity checks, encontrar outliers y depurar el logging antes de modelar (cap02).
+- **Árbol de decisión**: método que elige el atributo que maximiza la ganancia de información (basada en entropía); interpretable y suele podarse para evitar el sobreajuste (cap07, cap13).
+- **AUC**: métrica de ranking; un valor cercano a 1 ("too good to be true") delata fuga de datos más que un buen modelo (cap05, cap12, cap13).
+- **Bagging**: técnica que generaliza los árboles en random forests para hacerlos más precisos y robustos (cap07).
+- **Base rate**: tasa base del fenómeno, representada por α en la regresión logística (≈1% de click-through) (cap05).
+- **Big Data**: volúmenes de datos cuyo manejo exige optimización paralelizada y aproximada; "N=ALL" casi nunca es cierto y lo que falta suele ser lo más importante (cap02, cap03).
+- **Burbuja de filtro**: efecto a vigilar en los motores de recomendación, junto al fenómeno del "rico se hace más rico" (cap08).
+- **Centralidad**: medidas (grado, cercanía, intermediación, vector propio) que captan distintas nociones de importancia de un nodo en una red (cap10).
+- **Cierre triádico**: tendencia en redes sociales a cerrar triángulos entre nodos relacionados (cap10).
+- **Clasificador**: primera de las cinco decisiones de un problema de clasificación (clasificador, optimización, función de pérdida, features y métrica) (cap05).
+- **Cloudera**: empresa de soporte del ecosistema Hadoop; Josh Wills fue su director de data science (cap14).
+- **Cold start**: problema de arranque en frío que, junto al desbalance de clases y el comportamiento adversario, obliga a cuidar los modelos de fraude (cap09).
+- **Confusor (confounder)**: variable que influye a la vez en el tratamiento y en el resultado; raíz de confundir correlación con causalidad (cap11).
+- **Cross-validation**: validación cruzada usada para detectar overfitting y que siempre conviene aplicar (cap03, cap08).
+- **Culturas (estadística e ingenieril)**: las dos culturas que combina el científico de datos, una centrada en incertidumbre e interpretación y otra en construir y predecir (cap03).
+- **Curva ROC de 25 millones**: resultado de OMOP con AUC 0,64 usando un método único, que sube a 0,92 al especializar por base de datos y resultado (cap12).
+- **Data leakage (fuga de datos)**: información no disponible en el momento real de la predicción, a menudo causa y efecto invertidos o artefactos de preparación (cap13, cap15).
+- **Datificación**: proceso (Cukier y Mayer-Schoenberger) que convierte la vida en datos, con un espectro de intencionalidad del "like" voluntario a la vigilancia involuntaria (cap01).
+- **Data scientist**: término acuñado por DJ Patil y Jeff Hammerbacher en 2008; interviene en todo el proceso y se evalúa en siete dominios (cap01).
+- **Dunning-Kruger (efecto)**: sesgo frente al que conviene hacerse reality checks al cultivar hábitos de mente (cap16).
+- **Entropía**: medida en la que se basa la ganancia de información que usan los árboles de decisión para elegir atributo (cap07).
+- **ERGM**: modelos de grafos aleatorios exponenciales que capturan transitividad, clustering y reciprocidad, pero cuya inferencia con una sola red sufre degeneración (cap10).
+- **Exponential downweighting**: técnica para estimar la volatilidad (Vnew = s·Vold + (1−s)·r0²), actualizable sin guardar todo el histórico (cap06).
+- **Feature selection (selección de variables)**: uno de los pasos más importantes y subestimados del machine learning, con tres familias: filtros, wrappers y métodos embebidos (cap07).
+- **Feedback loop**: bucle de realimentación en que el modelo influye en el fenómeno que observa; en ranking obliga a registrar la posición mostrada (cap02, cap05).
+- **Función de pérdida**: una de las cinco decisiones de un problema de clasificación (cap05).
+- **Giraph**: versión open source de Pregel (cap14).
+- **Grafo bipartito**: estructura que forman usuarios e ítems en recomendación, o {user, action, item, timestamp} en GetGlue (cap06, cap08).
+- **Ground truth**: etiqueta de verdad que a veces no existe, como "usuario comprometido" en Facebook (cap09).
+- **Hadoop**: versión open source de MapReduce; su ecosistema incluye HDFS, Hive, Mahout/Taste y Cloudera (cap14).
+- **HDFS**: sistema de archivos de Hadoop con bloques de 64–256 MB replicados (cap14).
+- **Hive**: herramienta del ecosistema Hadoop que ofrece SQL sobre Hadoop (cap14).
+- **In-sample / out-of-sample**: separación temporal del modelado causal que exige fijar el in-sample antes del out-of-sample y nunca usar información del futuro (cap06).
+- **Inverse-logit**: función que usa la regresión logística para acotar la salida en [0,1] y devolver probabilidades (cap05).
+- **Juramento Hipocrático del Modelado**: propuesta de Derman, buen punto de partida ético pero insuficiente ante la política de la industria (cap16).
+- **Kaggle**: plataforma de competiciones que conecta empresas y científicos; un hold-out decide al ganador y el leaderboard provoca "leapfrogging" (cap07).
+- **k-means**: clustering no supervisado que itera asignación y recálculo de centroides; elegir k es arte y la interpretabilidad suele ser el mayor problema (cap03).
+- **k-Nearest Neighbors (k-NN)**: clasificación no paramétrica por voto mayoritario de los vecinos; dependen la métrica de distancia, el escalado y la elección de k (cap03, cap04).
+- **Laplace Smoothing**: suavizado θ_jc = (n_jc + α)/(n_c + β) que evita probabilidades de 0 o 1; α y β son pseudocounts equivalentes a un prior (cap04).
+- **Log returns**: rendimientos logarítmicos, aditivos y simétricos ante ganancias y pérdidas, cercanos a los porcentuales a corto plazo (cap06).
+- **Logit**: expresión del modelo logístico logit(P) = α + βᵀx, con α como base rate y β la pendiente por feature (cap05).
+- **Mahout/Taste**: componente del ecosistema Hadoop para recomendación (cap14).
+- **Máxima verosimilitud**: método de estimación de parámetros que minimiza la log-verosimilitud negativa, p. ej. con Newton o SGD (cap02, cap05).
+- **Maldición de la dimensionalidad**: fenómeno por el que incluso los vecinos más cercanos están lejos, lo que impide usar k-NN en spam (cap04, cap08).
+- **MapReduce**: algoritmo de ingeniería de datos de Google (2004) para volúmenes que no caben en una máquina; asume tolerancia a fallos y usa mapper y reducer (cap14).
+- **Mapper**: función de MapReduce que emite pares (clave, valor) (cap14).
+- **Modelo**: abstracción de la realidad; conviene empezar simple recordando el compromiso entre simplicidad y precisión (cap02).
+- **Naive Bayes**: clasificador lineal derivado de la ley de Bayes que combina palabras asumiéndolas independientes (de ahí "naive"), barato e incremental (cap04).
+- **OMOP**: experimento que evaluó 14 diseños y ~5.000 configuraciones sobre 10 bases (200 millones de personas) para ver si detectan efectos ya conocidos (cap12).
+- **Overfitting (sobreajuste)**: ajuste excesivo a los datos que hay que vigilar; los árboles sin podar sobreajustan y calibran mal (cap02, cap13).
+- **Pair programming**: práctica de programación en pareja valorada junto al código legible, los tests y la puesta en producción fiable (cap09).
+- **Paradoja de Simpson**: tendencia en subgrupos que puede invertirse al combinarlos (ejemplo del mal fármaco y la aspirina) (cap11).
+- **PCA (análisis de componentes principales)**: busca U y V minimizando el error cuadrático y produce atributos latentes no correlacionados (cap08).
+- **PnL acumulado**: medida con la que se evalúa un modelo financiero, en lugar de accuracy, dado que las señales son débiles (cap06).
+- **Precision**: métrica preferible a la exactitud con clases desbalanceadas, elegida junto al recall según el coste de cada error (cap09).
+- **Pregel**: sistema de Google que procesa grafos a gran escala mediante supersteps entre nodos vecinos y aggregators; su open source es Giraph (cap14).
+- **Prior**: información previa; en modelado financiero son coeficientes pequeños o suaves para reducir grados de libertad (cap06, cap08).
+- **Producto de datos**: salida que convierte el comportamiento del usuario en combustible retroalimentado; el motor de recomendación es su ejemplo por excelencia (cap01, cap08).
+- **Proceso de la ciencia de datos**: recorrido que va del mundo real a datos crudos, limpieza, EDA, modelo y comunicación o producto de datos (cap02).
+- **Puntaje de propensión**: emparejamiento que crea un control sintético con regresión logística cuando no hay experimento, sin garantizar ajustar por todos los confusores (cap11).
+- **Random forest**: generalización de los árboles con bagging; más preciso y robusto pero poco interpretable, definido con N árboles y F variables por nodo (cap07).
+- **Recall**: métrica que, junto a precision, sustituye a la exactitud engañosa con clases desbalanceadas (cap09).
+- **Recomendación (motor de)**: producto de datos que predice preferencias desconocidas a partir de las conocidas sobre un grafo bipartito usuario-ítem (cap08).
+- **Reducer**: función de MapReduce que agrega todos los valores de una clave fija, con un shuffle en medio (cap14).
+- **Regresión lineal**: modelo que asume linealidad y ruido, se ajusta por mínimos cuadrados y se evalúa con R², p-values y cross-validation; no sirve para spam (cap03, cap04).
+- **Regresión logística**: modelo de clasificación que usa la inverse-logit para devolver probabilidades y se ajusta por máxima verosimilitud (cap05).
+- **Modelo de Rubin**: marco causal donde el efecto individual Yi1 − Yi0 es incognoscible porque solo vemos un resultado (problema fundamental de la inferencia causal) (cap11).
+- **Social Network Analysis (SNA)**: análisis que viene de la teoría de grafos y la sociometría; sus unidades son nodos/actores y aristas/lazos (cap10).
+- **Spark**: sistema más eficiente que MapReduce para algoritmos iterativos como el descenso de gradiente (cap14).
+- **Stochastic Gradient Descent (SGD)**: algoritmo de optimización que escala mejor con datos enormes y dispersos (cap03, cap05).
+- **Superstep**: paso de cómputo de Pregel entre nodos vecinos en el procesamiento de grafos (cap14).
+- **SVD**: descomposición X = U·S·Vτ que descubre atributos latentes ordenados por importancia y permite comprimir eligiendo d, pero es cara y no maneja datos faltantes (cap08).
+- **Timestamp**: dato con marca de tiempo cuyo orden permite ver causa, tendencia y estacionalidad; conviene distinguir timestamps de disponibilidad y de referencia (cap06).
+- **Wrangling**: manipulación de datos que incluye obtenerlos con APIs y herramientas de scraping como YQL, Firebug, curl/wget, Beautiful Soup o Mechanize (cap04).
+- **Wrappers**: familia de selección de variables stepwise (forward, backward, combinado) con riesgo de sobreajuste (cap07).

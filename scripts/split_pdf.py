@@ -216,7 +216,7 @@ def main():
         if off is not None:
             offsets[off] += 1
         if not a.dry_run:
-            with open(os.path.join(libdir, c["name"] + ".txt"), "w", encoding="utf-8") as f:
+            with open(os.path.join(libdir, c["name"] + ".txt"), "w", encoding="utf-8", errors="replace") as f:
                 f.write(txt)
     desfase = offsets.most_common(1)[0][0] if offsets else None
     manifest = dict(libro=a.libro, pdf=os.path.abspath(a.pdf), paginas_pdf=n, desfase_folio=desfase, capitulos=chapters)

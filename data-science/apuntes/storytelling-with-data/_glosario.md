@@ -1,0 +1,61 @@
+# Glosario — Storytelling with Data
+
+- **Acceptance (aceptación)**: para que un diseño se adopte hay que gestionar la resistencia al cambio explicando beneficios, mostrando el antes-y-después, ofreciendo opciones y ganando aliados influyentes (cap05).
+- **Accesibilidad**: cualidad de un visual que no complica en exceso; usa fuentes legibles y lenguaje simple porque lo complicado ahuyenta a la audiencia (cap05).
+- **Action title (título de acción)**: título que expresa la conclusión que se quiere que la audiencia entienda, en lugar de un rótulo meramente descriptivo (cap05).
+- **Affordances**: señales visuales que indican cómo usar algo; resaltar lo importante, eliminar distracciones y crear jerarquía visual (cap05).
+- **Aesthetics (estética)**: el buen aspecto de un visual aumenta la percepción de usabilidad y la tolerancia a los problemas del diseño (cap05).
+- **Análisis explicativo**: comunicación de las "dos perlas", el mensaje concreto que se quiere transmitir a la audiencia (cap01).
+- **Análisis exploratorio**: exploración de los datos ("las 100 ostras") para encontrar lo relevante; no es lo que se comunica a la audiencia (cap01).
+- **Animación**: recurso que permite que una misma diapositiva sirva para presentar en vivo (revelando el dato en cada punto) y para circular como versión anotada (cap09).
+- **Área cuadrada**: tipo de visual incluido entre los recursos que cubren la mayoría de las necesidades al comunicar datos (cap02).
+- **Atributos preatentivos (preattentive attributes)**: rasgos visuales como tamaño, color, posición, intensidad o longitud de línea que el cerebro capta casi al instante, sin esfuerzo consciente (cap04).
+- **Barras apiladas al 100%**: visual modelo que muestra la composición parte-todo de cada categoría sobre el total (cap06).
+- **Barras apiladas positivas y negativas**: visual modelo que representa valores a ambos lados de una línea base (cap06).
+- **Bing, Bang, Bongo**: esquema de repetición para estructurar un relato (cap07).
+- **Carga cognitiva**: energía mental que la audiencia gasta en procesar cada elemento visual; lo decisivo es la carga cognitiva percibida (cap03).
+- **Clutter (desorden)**: ruido visual, todo elemento que no aporta valor informativo suficiente para justificar su presencia; es el enemigo a batir (cap03).
+- **Color**: atributo preatentivo potente solo si se usa poco, de forma consistente, pensando en el daltonismo y valorando los colores de marca (cap04).
+- **Conflicto y tensión**: "lo que es frente a lo que podría ser"; capta y mantiene la atención de la audiencia en una historia (cap07).
+- **Contexto**: la necesidad de comunicar que hay que entender antes de crear cualquier gráfico; incluye who, what y how (cap01).
+- **Contraste**: recurso que debe usarse estratégicamente, porque cuantas más cosas diferencies menos destaca cada una (cap03).
+- **Daltonismo**: condición que hay que tener en cuenta al elegir color para que el visual siga siendo legible (cap04).
+- **Data-ink ratio**: concepto de Tufte; maximizar la tinta dedicada a los datos frente a la del ruido visual (cap03).
+- **Decluttering**: proceso iterativo de eliminar desorden (borde, cuadrícula, marcadores, etiquetas, etiquetado directo, color consistente) que reduce la carga cognitiva (cap03).
+- **Display**: tipo de representación o recurso visual elegido para mostrar los datos (cap08).
+- **Enfoque del optometrista**: comparar versiones A/B con un solo cambio para decidir qué funciona mejor (cap10).
+- **Espacio en blanco**: zona sin elementos que debe respetarse; nunca se añaden datos solo para rellenarla (cap03).
+- **Etiquetado directo**: rotular líneas y series en el propio gráfico en lugar de usar una leyenda (cap06).
+- **Forma sigue a la función**: lema de diseño; primero se decide qué debe hacer la audiencia con los datos (función) y luego se crea la visualización (forma) (cap05).
+- **Gráfico de líneas (line graph)**: visual modelo para datos continuos; puede anotarse y combinarse con pronóstico (cap06).
+- **Gráfico espagueti**: gráfico de líneas saturado; se resuelve enfatizando una línea a la vez, separando espacialmente o mostrando menos datos (cap09).
+- **Gran Idea**: destilación del mensaje en una sola oración completa que expresa el punto de vista y lo que está en juego (cap01).
+- **Heatmap**: tabla en la que el color señala la magnitud de los datos, acompañado de leyenda (cap02).
+- **Historia de 3 minutos**: ejercicio para destilar el mensaje a lo esencial que se diría en tres minutos (cap01).
+- **How**: los datos como evidencia de apoyo, que se aborda después de resolver who y what (cap01).
+- **Jerarquía visual**: organización que da "instrucciones implícitas" de qué mirar primero en los segundos iniciales (cap04).
+- **Licencia artística**: libertad para elegir entre múltiples soluciones válidas y hacer la información más fácil de entender (cap10).
+- **Línea base en cero**: requisito de las barras; deben partir siempre de cero para no distorsionar la comparación (cap02).
+- **Lógica horizontal y vertical**: táctica de verificación de la claridad de la historia (cap07).
+- **Memoria de corto plazo**: memoria que retiene unos cuatro fragmentos de información a la vez (cap04).
+- **Memoria icónica**: memoria visual que capta los atributos preatentivos casi al instante (cap04).
+- **Posición en la página**: atributo preatentivo; lo más importante se coloca arriba a la izquierda, siguiendo el recorrido en "z" de la mirada (cap04).
+- **Principios Gestalt**: seis principios de percepción visual (proximidad, similitud, encierro, cierre, continuidad, conexión) para distinguir señal de ruido (cap03).
+- **Pronóstico (forecast)**: datos previstos que se distinguen de los reales con señales visuales como línea punteada o sombreado (cap06).
+- **Prueba "¿hacia dónde se dirigen tus ojos?"**: validación del diseño observando adónde va la mirada primero (cap04).
+- **Razón señal-ruido**: concepto de Duarte; más énfasis para los datos (señal) y menos para el ruido (cap03).
+- **Repetición**: recurso narrativo mediante sound bites repetibles y esquemas como Bing, Bang, Bongo (cap07).
+- **Resistencia al cambio**: oposición que hay que gestionar para lograr la aceptación de un nuevo diseño (cap05).
+- **Scatterplot**: gráfico para mostrar la relación entre dos variables (cap02).
+- **Slideument**: pieza que intenta cubrir a la vez presentación en vivo y documento escrito; se intenta evitar (cap01).
+- **Slopegraph**: gráfico para comparar dos periodos mostrando la tasa de cambio (cap02).
+- **Sound bite**: frase breve y repetible que refuerza el mensaje de la historia (cap07).
+- **Storyboarding**: planificación "low tech" de la comunicación antes de abrir el software de presentaciones (cap01).
+- **Storyboard inverso**: táctica de verificación que reconstruye el esquema de un relato ya hecho para comprobar su claridad (cap07).
+- **Tabla**: recurso que interactúa con el sistema verbal (la leemos); se evita en presentaciones en vivo (cap02).
+- **Tamaño**: atributo preatentivo que, usado con moderación, dirige la atención y admite valor cuantitativo de forma limitada (cap04).
+- **Texto simple**: recurso para comunicar uno o dos números destacando la cifra, sin restarle fuerza con tablas o gráficos (cap02).
+- **Tres actos de Aristóteles**: estructura de principio, medio y final que inspira la narración con datos (cap07).
+- **What**: la acción que se pide a la audiencia, además del mecanismo y el tono de la comunicación (cap01).
+- **Who**: la audiencia a la que se comunica, acotada al máximo e identificando al decisor (cap01).
+- **"Y qué" (so what)**: la relevancia que debe asegurar cada pieza de la comunicación, sobre todo sin voz que la acompañe (cap07).
